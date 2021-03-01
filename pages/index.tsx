@@ -1,81 +1,47 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
-        <title>Create Next App</title>
+        <title>Jon Heslop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
+      <main className="flex-1 p-8 pb-0 grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-12">
+        <h1 className="text-4xl text-green-600 font-black md:col-span-3">
+          JFH
         </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <section className="max-w-xl lg:max-w-2xl md:col-start-2">
+          <h2 className="text-4xl md:text-2xl lg:text-4xl font-medium mb-12">Jon Heslop is a designer &&nbsp;developer based in&nbsp;London.</h2>
+        </section>
+        <figure className="row-start-3 md:col-start-3">
+          <Image
+            src="/jon-heslop.jpg"
+            alt="A picture of me in a garden chatting."
+            width={1280}
+            height={848} />
+            <figcaption className="font-medium text-xs text-gray-600 text-right">
+              Photo by <Link href="https://tomalprice.com/"><a className="hover:underline" target="_blank" rel="noopener noreferrer">Tom Price</a></Link>
+            </figcaption>
+        </figure>
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
+      <footer className="flex items-center w-full px-8 py-4 text-sm justify-between font-medium">
+        <section>
+          <Link href="https://github.com/jonheslop"><a className="hover:underline">Github</a></Link>
+          <span className="text-gray-300 px-2">|</span>
+          <Link href="https://twitter.com/jonheslop"><a className="hover:underline">Twitter</a></Link>
+          <span className="text-gray-300 px-2">|</span>
+          <Link href="https://instagram.com/jonheslop"><a className="hover:underline">Instagram</a></Link>
+        </section>
+        <section>
+          <Link href="mailto:jon@jonheslop.com"><a className="hover:underline">Email</a></Link>
+          <span className="text-gray-300 px-2">|</span>
+          <Link href="/colophon"><a className="hover:underline">Colophon</a></Link>
+        </section>
       </footer>
     </div>
   )
