@@ -17,10 +17,10 @@ export default function Home() {
           </h1>
           <h2 className="md:col-start-2 text-4xl md:text-2xl lg:text-4xl font-medium mb-4 -mt-2">Colophon</h2>
           <article className="space-y-4">
-            <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal">Type set in <Link href=""><a className="underline hover:text-green-600">San Francisco</a></Link> by <Link href=""><a className="underline hover:text-green-600">Apple</a></Link>.</p>
-            <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal">Statically generated with <Link href=""><a className="underline hover:text-green-600">Next.js</a></Link>.</p>
-            <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal">Hosted by <Link href=""><a className="underline hover:text-green-600">Vercel</a></Link>.</p>
-            <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal">Glued together with <Link href=""><a className="underline hover:text-green-600">javascript</a></Link> by me.</p>
+            <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal">Type set in <Link href="https://developer.apple.com/fonts/"><a className="underline hover:text-green-600">San Francisco</a></Link> by <Link href="https://www.apple.com/"><a className="underline hover:text-green-600">Apple</a></Link>.</p>
+            <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal">Statically generated with <Link href="https://nextjs.org/"><a className="underline hover:text-green-600">Next.js</a></Link>.</p>
+            <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal">Hosted by <Link href="https://vercel.com/"><a className="underline hover:text-green-600">Vercel</a></Link>.</p>
+            <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal">Glued together with <Link href="https://github.com/jonheslop/jfh-2021"><a className="underline hover:text-green-600">javascript</a></Link> by me.</p>
           </article>
         </main>
       </div>
