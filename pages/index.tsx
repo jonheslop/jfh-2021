@@ -1,9 +1,8 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
-import Logo from "../components/logo";
 import Job from "../components/job";
-import Footer from "../components/footer";
+import Heading from "../components/heading";
+import Layout from "../components/layout";
+import Link from "../components/link";
 
 const jobs = [
   {
@@ -104,33 +103,27 @@ const jobs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-medium">
-      <Head>
-        <title>Jon Heslop</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout pageTitle="Hello">
+      <Heading classes="mb-4">
+        Jon Heslop is a designer &&nbsp;developer based in&nbsp;London.
+      </Heading>
+      <figure className="md:col-start-4">
+        <Image
+          src="/jon-heslop.jpg"
+          alt="A picture of me in a garden chatting."
+          width={1280}
+          height={848} />
+          <figcaption className="text-xs text-gray-500 text-right">
+            Photo by <Link href="https://tomalprice.com/" external={true}>Tom Price</Link>
+          </figcaption>
+      </figure>
 
-      <div className="flex-1 p-16 grid grid-cols-1 md:grid-cols-page-layout auto-rows-min items-start gap-16 relative">
-        <Logo />
-        <h2 className="text-4xl md:text-2xl lg:text-4xl mb-4">Jon Heslop is a designer &&nbsp;developer based in&nbsp;London.</h2>
-        <figure className="md:col-start-4">
-          <Image
-            src="/jon-heslop.jpg"
-            alt="A picture of me in a garden chatting."
-            width={1280}
-            height={848} />
-            <figcaption className="text-xs text-gray-500 text-right">
-              Photo by <Link href="https://tomalprice.com/"><a className="hover:underline" target="_blank" rel="noopener noreferrer">Tom Price</a></Link>
-            </figcaption>
-        </figure>
-
-        <h2 className="md:col-start-2 text-4xl md:text-2xl lg:text-4xl mb-4 border-b pb-2 md:border-none md:sticky top-16">Work</h2>
-        {
-          jobs.map((job, i) => <Job key={i} data={job} />)
-        }
-      </div>
-
-      <Footer />
-    </div>
+      <Heading classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-16 mb-4">
+        Work
+      </Heading>
+      {
+        jobs.map((job, i) => <Job key={i} data={job} />)
+      }
+    </Layout>
   )
 }
