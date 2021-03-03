@@ -9,7 +9,7 @@ type Props = {
 
 export default function Layout({pageTitle, children}: Props) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-medium">
+    <div className="flex flex-col items-center justify-center min-h-screen font-soehne">
       <Head>
         <title>{pageTitle} - Jon Heslop</title>
         <link rel="icon" href="/favicon.gif" />
