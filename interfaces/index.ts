@@ -3,4 +3,11 @@ export type Job = {
   role: string
   period: string
   description: string
+  logos: Logo[]
+}
+
+export type Logo = {
+  imageURL: string
+  imageAlt: string
+  imageBg: string
 }
