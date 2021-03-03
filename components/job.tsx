@@ -22,10 +22,10 @@ export default function WorkItem({data}: Props) {
       </figure>
       <div className="md:col-start-4 mb-32">
         <header className="mb-16">
-          <h2 className="font-medium text-4xl md:text-2xl lg:text-4xl">{ data.company }</h2>
-          <h3 className="font-medium text-xl md:text-lg lg:text-xl text-gray-500">{ data.role }, { data.period }</h3>
+          <h2 className="text-4xl md:text-2xl lg:text-4xl">{ data.company }</h2>
+          <h3 className="text-xl md:text-lg lg:text-xl text-gray-500">{ data.role }, { data.period }</h3>
         </header>
-        <p className="font-medium text-xl md:text-lg lg:text-xl leading-normal max-w-3xl">
+        <p className="text-xl md:text-lg lg:text-xl leading-normal max-w-3xl">
           { data.description }
         </p>
       </div>

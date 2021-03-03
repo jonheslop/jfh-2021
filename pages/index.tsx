@@ -103,14 +103,14 @@ const jobs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen tracking-tight">
+    <div className="flex flex-col items-center justify-center min-h-screen tracking-tight font-medium">
       <Head>
         <title>Jon Heslop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="flex-1 p-16 grid grid-cols-1 md:grid-cols-page-layout auto-rows-min items-start gap-16 relative">
-        <h1 className="text-4xl text-green-600 font-black md:sticky top-16 row-span-full">
+        <h1 className="text-4xl text-green-600 md:sticky top-16 row-span-full">
           <Link href="/">
             <a className="hover:text-green-800">
               <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 682.17 682.18" className="rounded-full"><path fill="currentColor" d="M0 0v682.17h682.17V0zm209.68 444.37s0 18.68-18.33 41.45c-21.23 26.36-26 28.59-26 28.59l-28-30.35 19.11-18.09s6.57-7.45 6.57-14.6V273.78l46.72-9.34zm311.48-60.08l-46.73 9.34v-70.08l-54.57 10.91v70.08l-46.73 9.35V276.05l-81.78 16.36v25.71l46.77-9.34v42.04l-46.77 9.3v70.08l-46.66 9.35-.06-182.22 175.27-35v70.09l54.57-10.91v-70.1l46.73-9.34z"></path></svg>
@@ -118,19 +118,19 @@ export default function Home() {
             </a>
           </Link>
         </h1>
-        <h2 className="text-4xl md:text-2xl lg:text-4xl font-medium mb-4">Jon Heslop is a designer &&nbsp;developer based in&nbsp;London.</h2>
+        <h2 className="text-4xl md:text-2xl lg:text-4xl mb-4">Jon Heslop is a designer &&nbsp;developer based in&nbsp;London.</h2>
         <figure className="md:col-start-4">
           <Image
             src="/jon-heslop.jpg"
             alt="A picture of me in a garden chatting."
             width={1280}
             height={848} />
-            <figcaption className="font-medium text-xs text-gray-500 text-right">
+            <figcaption className="text-xs text-gray-500 text-right">
               Photo by <Link href="https://tomalprice.com/"><a className="hover:underline" target="_blank" rel="noopener noreferrer">Tom Price</a></Link>
             </figcaption>
         </figure>
 
-        <h2 className="md:col-start-2 text-4xl md:text-2xl lg:text-4xl font-medium mb-4 border-b pb-2 md:border-none md:sticky top-16">Work</h2>
+        <h2 className="md:col-start-2 text-4xl md:text-2xl lg:text-4xl mb-4 border-b pb-2 md:border-none md:sticky top-16">Work</h2>
         {
           jobs.map((job, i) => <Job key={i} data={job} />)
         }
