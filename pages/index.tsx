@@ -24,7 +24,7 @@ const jobs = [
     role: "Senior front end developer on GOV.UK Pay",
     period: "June 2017 - November 2019",
     description:
-      "Government Digital Service is part of the Cabinet Office. Our job is digital transformation of government. I worked within Government as a Platform specifically as the front end developer on GOV.UK Pay, which makes it quicker and easier for government services to process payments online.",
+      "The UK Government Digital Service is part of the Cabinet Office. GDS is part of the digital transformation of government. I worked within Government as a Platform as the front end developer on GOV.UK Pay, which makes it quicker and easier for government services to process payments online.",
     logos: [
       {
         imageURL: "/gov-uk-crown.svg",
