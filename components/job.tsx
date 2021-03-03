@@ -21,12 +21,12 @@ export default function WorkItem({data}: Props) {
         ))
         }
       </figure>
-      <div className="md:col-start-4 mb-32">
+      <div className="md:col-start-4 mb-16 md:mb-32">
         <header className="mb-16">
           <Heading>{ data.company }</Heading>
-          <h3 className="text-xl md:text-lg lg:text-xl text-gray-500">{ data.role }, { data.period }</h3>
+          <h3 className="md:text-xl md:text-lg lg:text-xl text-gray-500">{ data.role }, { data.period }</h3>
         </header>
-        <p className="text-xl md:text-lg lg:text-xl leading-normal max-w-3xl">
+        <p className="md:text-xl md:text-lg lg:text-xl leading-normal max-w-3xl">
           { data.description }
         </p>
       </div>
