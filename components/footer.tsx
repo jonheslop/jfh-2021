@@ -7,6 +7,8 @@ export default function Footer() {
         <Link href="https://github.com/jonheslop" external={true}>Github</Link>
         <Link href="https://twitter.com/jonheslop" external={true}>Twitter</Link>
         <Link href="https://instagram.com/jonheslop" external={true}>Instagram</Link>
+        <Link href="https://vsco.co/jonheslop/" external={true}>VSCO</Link>
+        <Link href="https://last.fm/user/jonheslop" external={true}>Last.fm</Link>
       </section>
       <section className="space-x-6 mt-4 sm:mt-0">
         <Link href="mailto:jon@jonheslop.com">Email</Link>
