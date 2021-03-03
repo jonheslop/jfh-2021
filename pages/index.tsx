@@ -105,7 +105,7 @@ export default function Home() {
   return (
     <Layout pageTitle="Hello">
       <Heading classes="mb-4">
-        Jon Heslop is a designer &&nbsp;developer based in&nbsp;London.
+        Jon Heslop is a front end developer based in&nbsp;London.
       </Heading>
       <figure className="md:col-start-4">
         <Image
