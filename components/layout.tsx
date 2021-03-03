@@ -12,7 +12,7 @@ export default function Layout({pageTitle, children}: Props) {
     <div className="flex flex-col items-center justify-center min-h-screen font-medium">
       <Head>
         <title>{pageTitle} - Jon Heslop</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.gif" />
       </Head>
 
       <div className="flex-1 p-16 grid grid-cols-1 md:grid-cols-page-layout auto-rows-min items-start gap-16 relative">
