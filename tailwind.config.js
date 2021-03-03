@@ -8,6 +8,14 @@ module.exports = {
       },
     },
   },
+  options: {
+    safelist: [
+      "bg-purple-900",
+      "bg-red-600",
+      "bg-black",
+      "bg-white"
+    ]
+  }
   variants: {
     extend: {},
   },
