@@ -6,6 +6,9 @@ module.exports = {
       gridTemplateColumns: {
         "page-layout": "1fr 4fr 1fr 6fr",
       },
+      colors: {
+        eggplant: "#300d4f",
+      },
     },
   },
   options: {

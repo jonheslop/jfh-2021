@@ -15,7 +15,7 @@ const jobs = [
       {
         imageURL: "/pusher.svg",
         imageAlt: "The Pusher P logo",
-        imageBg: "purple-900",
+        imageBg: "eggplant",
       }
     ]
   },
@@ -125,7 +125,7 @@ export default function Home() {
             alt="A picture of me in a garden chatting."
             width={1280}
             height={848} />
-            <figcaption className="font-medium text-xs text-gray-600 text-right">
+            <figcaption className="font-medium text-xs text-gray-500 text-right">
               Photo by <Link href="https://tomalprice.com/"><a className="hover:underline" target="_blank" rel="noopener noreferrer">Tom Price</a></Link>
             </figcaption>
         </figure>
