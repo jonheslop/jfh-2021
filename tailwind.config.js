@@ -1,5 +1,13 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  purge: {
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    options: {
+      safelist: ["bg-eggplant", "bg-red-600", "bg-black", "bg-white"],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -10,9 +18,6 @@ module.exports = {
         eggplant: "#300d4f",
       },
     },
-  },
-  options: {
-    safelist: ["bg-eggplant", "bg-red-600", "bg-black", "bg-white"],
   },
   variants: {
     extend: {},
