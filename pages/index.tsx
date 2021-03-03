@@ -103,7 +103,7 @@ const jobs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen tracking-tight font-medium">
+    <div className="flex flex-col items-center justify-center min-h-screen font-medium">
       <Head>
         <title>Jon Heslop</title>
         <link rel="icon" href="/favicon.ico" />
