@@ -7,7 +7,7 @@ export default function Colophon() {
       <h2 className="text-4xl md:text-2xl lg:text-4xl md:sticky top-16">Colophon</h2>
       <article className="md:col-start-4 space-y-4 mt-3">
         <p className="text-xl md:text-lg lg:text-xl leading-normal">
-          Type set in <Link href="https://developer.apple.com/fonts/" external={true}>San Francisco</Link> by <Link href="https://www.apple.com/" external={true}>Apple</Link>.
+          Type set in <Link href="https://klim.co.nz/retail-fonts/soehne/" external={true}>Söhne</Link> by <Link href="https://klim.co.nz/" external={true}>Klim</Link>.
         </p>
         <p className="text-xl md:text-lg lg:text-xl leading-normal">
           Styled with <Link href="https://tailwindcss.com/" external={true}>Tailwind CSS</Link>.

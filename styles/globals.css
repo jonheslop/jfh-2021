@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Soehne";
+  src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff2")
+      format("woff2"),
+    url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff") format("woff"),
+    url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot") format("eot");
+  font-weight: normal;
+  font-style: normal;
+}
