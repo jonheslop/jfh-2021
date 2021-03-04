@@ -1,45 +1,45 @@
 module.exports = {
   purge: {
     content: [
-      "./pages/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
+      './pages/**/*.{js,ts,jsx,tsx}',
+      './components/**/*.{js,ts,jsx,tsx}'
     ],
     options: {
-      safelist: ["bg-eggplant", "bg-red-600", "bg-black", "bg-white"],
-    },
+      safelist: ['bg-eggplant', 'bg-red-600', 'bg-black', 'bg-white']
+    }
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, // Or 'media' or 'class'
   theme: {
     extend: {
       gridTemplateColumns: {
-        "page-layout": "1fr 4fr 1fr 6fr",
+        'page-layout': '1fr 4fr 1fr 6fr'
       },
       colors: {
-        eggplant: "#300d4f",
+        eggplant: '#300d4f'
       },
       fontFamily: {
         soehne: [
-          "Söhne web",
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "BlinkMacSystemFont",
+          'Söhne web',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
           '"Segoe UI"',
-          "Roboto",
+          'Roboto',
           '"Helvetica Neue"',
-          "Arial",
+          'Arial',
           '"Noto Sans"',
-          "sans-serif",
+          'sans-serif',
           '"Apple Color Emoji"',
           '"Segoe UI Emoji"',
           '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
-      },
-    },
+          '"Noto Color Emoji"'
+        ]
+      }
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 };
