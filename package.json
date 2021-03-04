@@ -1,5 +1,6 @@
 {
-  "name": "with-tailwindcss",
+  "name": "jfh-2021",
+  "description": "My new personal site for 2021",
   "version": "0.1.0",
   "private": true,
   "scripts": {
