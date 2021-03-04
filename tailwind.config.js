@@ -8,7 +8,7 @@ module.exports = {
       safelist: ['bg-eggplant', 'bg-red-600', 'bg-black', 'bg-white']
     }
   },
-  darkMode: false, // Or 'media' or 'class'
+  darkMode: 'media',
   theme: {
     extend: {
       gridTemplateColumns: {
