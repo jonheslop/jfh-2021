@@ -12,6 +12,14 @@ export const jobs = [
         imageBg: "eggplant",
       },
     ],
+    blogPosts: [
+      {
+        label:
+          "Using dynamic imports and webpack to boost page load perfomance",
+        href:
+          "https://blog.pusher.com/using-dynamic-imports-and-webpack-to-boost-page-load-perfomance/",
+      },
+    ],
   },
   {
     company: "Government Digital Service",
@@ -24,6 +32,19 @@ export const jobs = [
         imageURL: "/gov-uk-crown.svg",
         imageAlt: "The GOV.UK crown logo",
         imageBg: "black",
+      },
+    ],
+    blogPosts: [
+      {
+        label:
+          "The benefits of migrating GOV.UK Pay’s codebase to the GOV.UK Design System",
+        href:
+          "https://technology.blog.gov.uk/2018/12/21/the-benefits-of-migrating-gov-uk-pays-codebase-to-the-gov-uk-design-system/",
+      },
+      {
+        label: "How we implemented Apple Pay and Google Pay on GOV.UK Pay",
+        href:
+          "https://technology.blog.gov.uk/2019/05/30/how-we-implemented-apple-pay-and-google-pay-on-gov-uk-pay/",
       },
     ],
   },

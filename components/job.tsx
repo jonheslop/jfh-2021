@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Job } from "../interfaces";
 import Heading from "./heading";
+import Link from "./link";
 
 type Props = {
   data: Job
@@ -29,6 +30,22 @@ export default function WorkItem({data}: Props) {
         <p className="md:text-xl md:text-lg lg:text-xl leading-normal max-w-3xl">
           { data.description }
         </p>
+        { data.blogPosts &&
+          <>
+            <Heading level="h4" classes="mt-8 mb-2">Blog posts</Heading>
+              <ul className="space-y-2">
+                {
+                  data.blogPosts.map(({href, label}, i) => (
+                    <li key={i} className="text-sm max-w-xs">
+                      <Link href={href} external={true}>
+                        {label}
+                      </Link>
+                    </li>
+                  ))
+                }
+            </ul>
+          </>
+        }
       </div>
     </>
   )
