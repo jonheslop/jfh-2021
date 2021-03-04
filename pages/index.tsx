@@ -104,7 +104,7 @@ const jobs = [
 export default function Home() {
   return (
     <Layout pageTitle="Hello">
-      <Heading classes="mb-4">
+      <Heading level="h1" classes="mb-4 md:col-span-2 max-w-xl">
         Jon Heslop is a front end developer based in&nbsp;London.
       </Heading>
       <figure className="md:col-start-4">
