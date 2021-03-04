@@ -4,7 +4,7 @@ export type Job = {
   period: string
   description: string
   logos: Logo[]
-  blogPosts: Post[]
+  blogPosts?: Post[]
 }
 
 export type Logo = {
