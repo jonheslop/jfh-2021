@@ -27,7 +27,7 @@ export default function WorkItem({data}: Props) {
           <Heading level="h3">{ data.company }</Heading>
           <Heading level="h4">{ data.role }, { data.period }</Heading>
         </header>
-        <p className="md:text-xl md:text-lg lg:text-xl leading-normal max-w-3xl">
+        <p className="text-xl md:text-lg lg:text-xl leading-normal max-w-3xl">
           { data.description }
         </p>
         { data.blogPosts &&
