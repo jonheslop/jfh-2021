@@ -2,14 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Söhne web";
-  src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot");
-  src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff2") format("woff2"),
-    url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+@layer base {
+  @font-face {
+    font-family: "Söhne web";
+    src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot");
+    src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot#iefix")
+        format("embedded-opentype"),
+      url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff2")
+        format("woff2"),
+      url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 }
