@@ -14,7 +14,10 @@ const WorkItem = ({data}: Props) => {
     <>
       <figure className="md:col-start-3 place-self-start md:justify-self-end flex md:block -mb-8 md:mb-0">
         { data.logos.map(logo => (
-          <div key={slugify(logo.imageAlt)} className={`bg-${logo.imageBg} ${logo.imageBg === 'white' ? 'border' : ''} rounded-full p-3 mr-4 md:mr-0 md:mb-4`} style={{fontSize: 0}}>
+          <div
+            key={slugify(logo.imageAlt)}
+            className={`bg-${logo.imageBg} ${logo.imageBg === 'white' && 'border dark:border-none' } ${logo.imageBg === 'black' && 'border dark:border-gray-500' } rounded-full p-3 mr-4 md:mr-0 md:mb-4`}
+            style={{fontSize: 0}}>
             <Image
               src={logo.imageURL}
               alt={logo.imageAlt}
