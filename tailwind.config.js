@@ -19,7 +19,7 @@ module.exports = {
       },
       fontFamily: {
         soehne: [
-          "soehne",
+          "Söhne web",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
