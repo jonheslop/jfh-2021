@@ -10,7 +10,7 @@ type Props = {
 
 const Layout = ({pageTitle, children}: Props) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-soehne dark:bg-black dark:text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>{pageTitle} - Jon Heslop</title>
         <link rel="preconnect" href="https://cdn.jonheslop.com"/>
