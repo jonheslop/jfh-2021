@@ -4,10 +4,11 @@ import Link from 'next/link';
 type Props = {
   href: string;
   external?: boolean;
+  classes?: string
   children: React.ReactNode;
 };
 
-const BaseLink = ({href, external = false, children}: Props) => {
+const BaseLink = ({href, external = false, classes = "", children}: Props) => {
   const linkAttributes = external ? {
     target: '_blank',
     rel: 'noopener noreferrer'
@@ -15,7 +16,7 @@ const BaseLink = ({href, external = false, children}: Props) => {
 
   return (
     <Link href={href}>
-      <a className="underline hover:text-green-600" {...linkAttributes}>
+      <a className={`underline hover:text-green-600 ${classes}`} {...linkAttributes}>
         { children }
       </a>
     </Link>
