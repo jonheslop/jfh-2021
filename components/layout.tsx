@@ -16,10 +16,10 @@ const Layout = ({pageTitle, children}: Props) => {
         <link rel="preconnect" href="https://cdn.jonheslop.com"/>
         <link rel="icon" href="/favicon.gif"/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
-        <meta name="description" content="Jon Heslop is a designer & developer based in London."/>
+        <meta name="description" content="Jon Heslop is a front end developer based in London."/>
         <meta property="og:url" content="http://jonheslop.com/"/>
         <meta property="og:title" content="Jon Heslop"/>
-        <meta property="og:description" content="Jon Heslop is a designer & developer based in London."/>
+        <meta property="og:description" content="Jon Heslop is a front end developer based in London."/>
         <meta property="og:type" content="website"/>
         <meta property="og:image" content="/jon-heslop.jpg"/>
       </Head>
