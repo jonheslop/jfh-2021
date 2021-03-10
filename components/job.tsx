@@ -16,8 +16,9 @@ const WorkItem = ({data}: Props) => {
         { data.logos.map(logo => (
           <div
             key={slugify(logo.imageAlt)}
-            className={`bg-${logo.imageBg} ${logo.imageBg === 'white' && 'border dark:border-none' } ${logo.imageBg === 'black' && 'border dark:border-gray-500' } rounded-full p-3 mr-4 md:mr-0 md:mb-4`}
-            style={{fontSize: 0}}>
+            className={`bg-${logo.imageBg} ${logo.imageBg === 'white' && 'border dark:border-none'} ${logo.imageBg === 'black' && 'border dark:border-gray-500'} rounded-full p-3 mr-4 md:mr-0 md:mb-4`}
+            style={{fontSize: 0}}
+          >
             <Image
               src={logo.imageURL}
               alt={logo.imageAlt}

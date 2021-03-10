@@ -18,4 +18,10 @@ export type Post = {
   label: string;
 };
 
+export type NoteLink = {
+  slug: string;
+  title: string;
+  date: string;
+};
+
 export type headingLevel= 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

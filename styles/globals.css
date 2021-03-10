@@ -15,4 +15,29 @@
     font-style: normal;
     font-display: swap;
   }
+
+  .post-content h1 {
+    @apply text-gray-500;
+  }
+
+  .post-content p + h1 {
+    @apply mt-16;
+  }
+
+  .post-content h1 {
+    @apply mb-4;
+  }
+
+  .post-content p + p {
+    @apply mt-8;
+  }
+
+  .post-content p {
+    @apply leading-normal;
+  }
+
+  .post-content a:link,
+  .post-content a:visited {
+    @apply underline hover:text-green-600;
+  }
 }
