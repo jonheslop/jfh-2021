@@ -20,7 +20,7 @@ const Custom404 = () => {
         </p>
       </header>
     </Layout>
-  )
-}
+  );
+};
 
-export default Custom404
+export default Custom404;
