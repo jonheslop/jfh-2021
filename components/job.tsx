@@ -41,7 +41,7 @@ const JobItem = ({data}: Props) => {
             <ul className="space-y-2">
               {
                 data.blogPosts.map(({href, label}) => (
-                  <li key={slugify(label)} className="text-sm max-w-xs">
+                  <li key={slugify(label)} className="text-sm max-w-xs pr-4">
                     <Link external href={href}>
                       {label}
                     </Link>
