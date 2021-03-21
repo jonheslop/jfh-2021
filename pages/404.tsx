@@ -1,6 +1,6 @@
 import React from 'react';
-import Heading from '../components/heading';
-import Layout from '../components/layout';
+import Heading from '@/components/heading';
+import Layout from '@/components/layout';
 
 const Custom404 = () => {
   return (

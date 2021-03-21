@@ -1,17 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
-import Job from '../components/job';
-import Heading from '../components/heading';
-import Layout from '../components/layout';
-import Link from '../components/link';
-import DateFormatter from '../components/date';
-import {jobs} from '../content/jobs.js';
-import {slugify} from '../utils';
-import {getAllPosts} from '../lib/api';
-import {NoteLink} from '../interfaces';
+import Job from '@/components/job';
+import Heading from '@/components/heading';
+import Layout from '@/components/layout';
+import Link from '@/components/link';
+import DateFormatter from '@/components/date';
+import {jobs} from '@/content/jobs.js';
+import {slugify} from '@/utils/slugify';
+import {getRecentPosts} from '@/lib/api';
+import {NoteLink} from '@/interfaces/index';
+import NoteLinkItem from "../components/note-link";
 
 export async function getStaticProps({params}) {
-  const posts = getAllPosts([
+  const posts = getRecentPosts([
     'title',
     'date',
     'slug'
@@ -45,27 +46,24 @@ const Home = ({posts}: Props) => {
         </figcaption>
       </figure>
 
-      <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-16 mb-4">
-        Blog posts
-      </Heading>
-
-      <ul className="col-start-4">
-        {
-          posts.map(({slug, title, date}) => (
-            <li className="mb-8">
-              <Link key={slug} href={`/posts/${slug}`} underline={false}>
-                <Heading level="h3" classes="underline">{title}</Heading>
-                <p className="text-xl md:text-lg lg:text-xl text-gray-500"><DateFormatter dateString={date}/></p>
-              </Link>
-            </li>
-          ))
-        }
-      </ul>
-
       <Heading classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-16 mb-4">
         Work
       </Heading>
       {jobs.map(job => <Job key={slugify(job.company)} data={job}/>)}
+
+      <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-32 mb-4">
+        Blog posts
+      </Heading>
+
+      <ul className="md:col-start-4">
+        {
+          posts.map((post) => (
+          <NoteLinkItem key={post.slug} data={post} />
+          ))
+        }
+      </ul>
+      <p className="md:col-start-4"><Link href="/posts">See all posts »</Link></p>
+
     </Layout>
   );
 };

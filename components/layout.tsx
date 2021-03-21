@@ -14,6 +14,13 @@ const Layout = ({pageTitle, children}: Props) => {
       <Head>
         <title>{pageTitle} - Jon Heslop</title>
         <link rel="preconnect" href="https://cdn.jonheslop.com"/>
+        <link
+            rel="preload"
+            href="https://cdn.jonheslop.com/fonts/soehne-web-buch.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+        />
         <link rel="icon" href="/favicon.gif"/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
         <meta name="description" content="Jon Heslop is a front end developer based in London."/>

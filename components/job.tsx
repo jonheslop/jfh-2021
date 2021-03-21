@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import {Job} from '../interfaces';
+import {Job} from '@/interfaces/index';
 import Heading from './heading';
 import Link from './link';
-import {slugify} from '../utils';
+import {slugify} from '@/utils/slugify';
 
 type Props = {
   data: Job;
 };
 
-const WorkItem = ({data}: Props) => {
+const JobItem = ({data}: Props) => {
   return (
     <>
       <figure className="md:col-start-3 place-self-start md:justify-self-end flex md:block -mb-8 md:mb-0">
@@ -55,4 +55,4 @@ const WorkItem = ({data}: Props) => {
   );
 };
 
-export default WorkItem;
+export default JobItem;

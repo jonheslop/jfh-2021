@@ -1,5 +1,5 @@
 import React from 'react';
-import {headingLevel} from '../interfaces';
+import {headingLevel} from '@/interfaces/index';
 
 type Props = {
   level?: headingLevel;

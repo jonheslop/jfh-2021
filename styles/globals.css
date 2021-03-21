@@ -16,15 +16,27 @@
     font-display: swap;
   }
 
-  .post-content h1 {
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .post-content h1,
+  .post-content h2 {
     @apply text-gray-500;
   }
 
-  .post-content p + h1 {
+  .post-content * + h1,
+  .post-content * + h2 {
     @apply mt-16;
   }
 
-  .post-content h1 {
+  .post-content h1,
+  .post-content h2 {
+    @apply text-xl;
+    @apply md:text-lg;
+    @apply lg:text-xl;
     @apply mb-4;
   }
 
@@ -34,10 +46,113 @@
 
   .post-content p {
     @apply leading-normal;
+    @apply text-xl;
+    @apply md:text-lg;
+    @apply lg:text-xl;
   }
 
   .post-content a:link,
   .post-content a:visited {
     @apply underline hover:text-green-600;
+  }
+
+  .post-content p code {
+    @apply text-base;
+    @apply py-1;
+    @apply px-2;
+    @apply bg-gray-50;
+    @apply text-green-700;
+  }
+
+  .post-content pre {
+    @apply my-8;
+    @apply p-4;
+    @apply bg-gray-900;
+    @apply text-gray-50;
+    @apply overflow-auto;
+  }
+
+  .post-content ul {
+    @apply list-disc;
+  }
+
+  .post-content li + li {
+    @apply mt-2;
+  }
+
+  .hljs {
+    @apply leading-tight;
+    @apply text-xs;
+  }
+
+  .hljs,
+  .hljs-tag,
+  .hljs-subst {
+    @apply text-gray-50;
+  }
+
+  .hljs-strong,
+  .hljs-emphasis {
+    @apply text-gray-200;
+  }
+
+  .hljs-bullet,
+  .hljs-quote,
+  .hljs-number,
+  .hljs-regexp,
+  .hljs-literal,
+  .hljs-link {
+    @apply text-purple-400;
+  }
+
+  .hljs-code,
+  .hljs-title,
+  .hljs-section,
+  .hljs-selector-class {
+    @apply text-green-400;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-name,
+  .hljs-attr {
+    @apply text-pink-400;
+  }
+
+  .hljs-symbol,
+  .hljs-attribute {
+    @apply text-blue-400;
+  }
+
+  .hljs-params,
+  .hljs-class .hljs-title {
+    @apply text-gray-100;
+  }
+
+  .hljs-string,
+  .hljs-type,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-selector-id,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-addition,
+  .hljs-variable,
+  .hljs-template-variable {
+    @apply text-yellow-400;
+  }
+
+  .hljs-comment,
+  .hljs-deletion,
+  .hljs-meta {
+    @apply text-gray-400;
   }
 }
