@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# RSS feed (generated on build)
+public/feed.xml
