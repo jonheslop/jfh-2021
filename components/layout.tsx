@@ -22,6 +22,8 @@ const Layout = ({pageTitle, children}: Props) => {
             crossOrigin="anonymous"
         />
         <link rel="icon" href="/favicon.gif"/>
+        <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Atom 2.0"/>
+
         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
         <meta name="description" content="Jon Heslop is a front end developer based in London."/>
         <meta property="og:url" content="http://jonheslop.com/"/>
