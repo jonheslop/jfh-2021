@@ -74,6 +74,7 @@
   }
 
   .post-content ul {
+    @apply my-8;
     @apply list-disc;
   }
 
