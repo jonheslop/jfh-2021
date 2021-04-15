@@ -7,7 +7,7 @@ Before I got going on the [redesign](/posts/15-redesign), I went back and dug ou
 
 - [2017] - this one has things in common with this one
 - [2012] - this was a good one, I made this when I was freelancing before I moved back to London
-- [2011] - I liked this one too, this was a basically a carbon copy of [Naz Hamid](https://nazhamid.com/)’s ‘The personal page‘ idea, it was a great idea.
+- [2011] - I liked this one too, this was a basically a carbon copy of [Naz Hamid’s](https://nazhamid.com/) ‘The personal page‘ idea, it was a great idea.
 - [2010] - This one was well ugly
 - [2009] - This was the first one I made after getting a job I think
 

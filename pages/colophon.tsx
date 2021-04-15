@@ -22,6 +22,13 @@ const Colophon = () => {
         <p className="text-xl md:text-lg lg:text-xl leading-normal">
           Glued together with <Link external href="https://github.com/jonheslop/jfh-2021">javascript by me</Link>.
         </p>
+
+        <p className="text-xl md:text-lg lg:text-xl leading-normal">
+          I’ve wrote a little more about <Link href="/posts/15-redesign">this iteration here</Link>.
+        </p>
+        <p className="text-xl md:text-lg lg:text-xl leading-normal">
+          And here is <Link href="/posts/15-archive">an archive of all the old sites here</Link>.
+        </p>
       </article>
     </Layout>
   );
