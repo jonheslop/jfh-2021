@@ -6,7 +6,7 @@ Statically generated with [Next.js].
 
 Deployed with [Vercel]
 
-Testing
+Testing GPG signing
 [tailwind css]: https://tailwindcss.com/
 [next.js]: https://nextjs.org/
 [vercel]: https://vercel.com/
