@@ -8,11 +8,7 @@
     "build": "node ./lib/generate-rss && next build",
     "start": "next start",
     "type-check": "tsc",
-    "lint": "xo"
-  },
-  "xo": {
-    "space": true,
-    "extends": "xo-react"
+    "lint": "next lint"
   },
   "dependencies": {
     "autoprefixer": "^10.0.4",
@@ -31,11 +27,9 @@
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
-    "eslint-config-xo-react": "^0.24.0",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.4",
     "rss": "^1.2.2",
-    "typescript": "^4.2.2",
-    "xo": "^0.38.2"
+    "typescript": "^4.2.2"
   }
 }
