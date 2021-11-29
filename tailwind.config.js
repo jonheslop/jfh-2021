@@ -5,7 +5,7 @@ module.exports = {
       './components/**/*.{js,ts,jsx,tsx}'
     ],
     options: {
-      safelist: ['bg-eggplant', 'bg-red-600', 'bg-black', 'bg-white']
+      safelist: ['bg-eggplant', 'bg-red-600', 'bg-black', 'bg-white', 'bg-kelp']
     }
   },
   darkMode: 'media',
