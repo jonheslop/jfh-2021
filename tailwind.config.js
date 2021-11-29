@@ -5,7 +5,7 @@ module.exports = {
       './components/**/*.{js,ts,jsx,tsx}'
     ],
     options: {
-      safelist: ['bg-eggplant', 'bg-red-600', 'bg-black', 'bg-white']
+      safelist: ['bg-eggplant', 'bg-red-600', 'bg-black', 'bg-white', 'bg-kelp']
     }
   },
   darkMode: 'media',
@@ -15,7 +15,8 @@ module.exports = {
         'page-layout': '1fr 4fr 1fr 6fr'
       },
       colors: {
-        eggplant: '#300d4f'
+        eggplant: '#300d4f',
+        kelp: '#2A6355'
       },
       fontFamily: {
         soehne: [
