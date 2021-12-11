@@ -4,7 +4,7 @@ export const jobs = [
     role: "Lead front end developer",
     period: "June 2021 - Present",
     description:
-      "Crezco exists to make money easy, by using Open Banking technologies. I lead front end development to make it easy to create payment links and manage accounts.",
+      "Crezco exists to make money easy, we combine Open Banking technologies with easy to use APIs and dashboards. I lead front end development and make sure everything performs well, looks good and is easy to use.",
     logos: [
       {
         imageURL: "/crezco.svg",
