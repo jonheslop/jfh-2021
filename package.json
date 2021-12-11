@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node ./lib/generate-rss && next build",
+    "build": "node ./lib/rss/generate-rss && next build",
     "start": "next start",
     "type-check": "tsc",
     "lint": "next lint"
