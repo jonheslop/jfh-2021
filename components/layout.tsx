@@ -33,7 +33,7 @@ const Layout = ({pageTitle, children}: Props) => {
         <meta property="og:image" content="/jon-heslop.jpg"/>
       </Head>
 
-      <div className="flex-1 p-8 md:p-16 grid grid-cols-1 md:grid-cols-page-layout auto-rows-min items-start gap-16 relative w-full">
+      <div className="flex-1 px-2 py-4 md:p-8 lg:p-16 grid grid-cols-1 md:grid-cols-page-layout auto-rows-min items-start gap-16 relative w-full">
         <Logo/>
         {children}
       </div>
