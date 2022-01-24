@@ -12,7 +12,6 @@ const Footer = () => {
         <Link external classes="my-2 lg:my-0" href="https://letterboxd.com/jonheslop/">Letterboxd</Link>
         <Link external classes="my-2 lg:my-0" href="https://twitter.com/jonheslop">Twitter</Link>
         <Link external classes="my-2 lg:my-0" href="https://vsco.co/jonheslop/">VSCO</Link>
-        <Link external classes="my-2 lg:my-0" href="https://app.crezco.com/payment/fXWwd_j5E0eoO0qQp9Ze6w">£</Link>
       </section>
       <section className="space-x-6 mt-4 sm:mt-0">
         <Link href="/feed.xml">RSS</Link>
