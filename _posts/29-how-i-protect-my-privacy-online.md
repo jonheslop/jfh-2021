@@ -15,7 +15,7 @@ _Here’s a little list of the things I’ve done:_
 
 ## I switched from Gmail to ProtonMail
 
-[ProtonMail] is probably overkill [Fastmail] would is good too. As with most of these things, if you’re not paying, you are the product.
+[Proton] is probably overkill [Fastmail] would is good too. As with most of these things, if you’re not paying, you are the product.
 
 ## I deleted my Facebook account
 
@@ -58,7 +58,7 @@ This is less about privacy more about security, but I used to have a well flimsy
 [tweetbot]: https://tapbots.com/tweetbot/
 [1password]: https://1password.com/
 [duckduckgo]: https://duckduckgo.com/about
-[protonmail]: https://protonmail.com/
+[Proton]: https://proton.me/
 [cloudflare]: https://www.cloudflare.com/
 [1]: https://www.buzzfeednews.com/article/craigsilverman/facebook-graph-search-war-crimes
 [2]: https://theoutline.com/post/7377/facebook-is-trying-to-make-the-word-private-meaningless
