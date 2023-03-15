@@ -7,7 +7,6 @@ const Footer = () => {
       <section className="flex flex-wrap space-x-6 space-x-reverse mt-4 sm:mt-0 pb-2 border-b sm:pb-0 sm:border-none">
         <Link external classes="my-2 lg:my-0 mr-6" href="https://github.com/jonheslop">Github</Link>
         <Link external classes="my-2 lg:my-0" href="https://instagram.com/jonheslop">Instagram</Link>
-        <Link external classes="my-2 lg:my-0" href="https://keybase.io/jonheslop">Keybase</Link>
         <Link external classes="my-2 lg:my-0" href="https://last.fm/user/jonheslop">Last.fm</Link>
         <Link external classes="my-2 lg:my-0" href="https://letterboxd.com/jonheslop/">Letterboxd</Link>
         <Link external classes="my-2 lg:my-0" href="https://twitter.com/jonheslop">Twitter</Link>
