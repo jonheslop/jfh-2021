@@ -11,6 +11,6 @@ After messing with [Next.js](https://nextjs.org/) before the 1.0 release and whi
 
 The ecosystem around it is great and it’s much faster now and it’s doesn’t burden the browser with anywhere near as much JS now.
 
-So here it is my new website, I had been itching for an excuse to buy [Söhne](https://klim.co.nz/retail-fonts/soehne/) since it launched and so have used that Buch weight throughout.
+So here it is my new website, I had been itching for an excuse to buy [Söhne](https://klim.co.nz/retail-fonts/soehne/) since it launched and have used Buch (weight) throughout.
 
 I’ve also used [TailwindCSS](https://tailwindcss.com/) having been a longstanding user of [Tachyons](http://tachyons.io/) before that. Tailwind is really powerful and I think going forward it will be my go to.
