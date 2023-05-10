@@ -7,7 +7,7 @@ import Link from '@/components/link';
 import DateFormatter from '@/components/date';
 import {jobs} from '@/content/jobs.js';
 import {slugify} from '@/utils/slugify';
-import {getRecentPosts} from '@/lib/api';
+import {getRecentPosts, getRecentPhotoPosts} from '@/lib/api';
 import {NoteLink} from '@/interfaces/index';
 import NoteLinkItem from "../components/note-link";
 
@@ -20,9 +20,19 @@ export async function getStaticProps({params}) {
     'coverImage'
   ]);
 
+  const photoPosts = getRecentPhotoPosts([
+    'title',
+    'date',
+    'slug',
+    'category',
+    'coverImage'
+  ]);
+
+
   return {
     props: {
-      posts: [...posts]
+      posts: [...posts],
+      photoPosts: [...photoPosts]
     }
   };
 }
@@ -31,7 +41,7 @@ type Props = {
   posts: NoteLink[];
 };
 
-const Home = ({posts}: Props) => {
+const Home = ({posts, photoPosts}: Props) => {
   return (
     <Layout pageTitle="Hello">
       <Heading level="h1" classes="mb-4 md:col-span-2 max-w-xl">
@@ -54,7 +64,7 @@ const Home = ({posts}: Props) => {
 
       <ul className="md:col-start-4">
         {
-          posts.filter((post) => post.category === 'photos')
+          photoPosts.filter((post) => post.category === 'photos')
           .map((post) => (
           <NoteLinkItem key={post.slug} data={post} />
           ))
