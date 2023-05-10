@@ -35,7 +35,7 @@ export default function Post({ post, morePosts }) {
         </>
       )}
       {post.photos !== undefined && (
-        <div className="col-start-2 col-span-3 w-full relative grid gap-16">
+        <div className="md:col-start-2 col-span-2 md:col-span-3 w-full relative grid gap-8 md:gap-16">
           {post.photos.map((photo) => (
             <Image
               width={2048}
