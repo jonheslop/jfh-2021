@@ -34,10 +34,7 @@
 
   .post-content h1,
   .post-content h2 {
-    @apply text-xl;
-    @apply md:text-lg;
-    @apply lg:text-xl;
-    @apply mb-4;
+    @apply text-xl md:text-lg lg:text-xl mb-4;
   }
 
   .post-content p + p {
@@ -46,10 +43,7 @@
 
   .post-content p,
   .post-content li {
-    @apply leading-normal;
-    @apply text-xl;
-    @apply md:text-lg;
-    @apply lg:text-xl;
+    @apply max-w-xl leading-normal text-xl md:text-lg lg:text-xl;
   }
 
   .post-content a:link,
@@ -58,24 +52,15 @@
   }
 
   .post-content p code {
-    @apply text-base;
-    @apply py-1;
-    @apply px-2;
-    @apply bg-gray-50;
-    @apply text-green-700;
+    @apply text-base  py-1  px-2  bg-gray-50 text-green-700;
   }
 
   .post-content pre {
-    @apply my-8;
-    @apply p-4;
-    @apply bg-gray-900;
-    @apply text-gray-50;
-    @apply overflow-auto;
+    @apply my-8 p-4 bg-gray-900 text-gray-50 overflow-auto;
   }
 
   .post-content ul {
-    @apply my-8;
-    @apply list-disc;
+    @apply my-8 list-disc;
   }
 
   .post-content li + li {
@@ -83,8 +68,7 @@
   }
 
   .hljs {
-    @apply leading-tight;
-    @apply text-xs;
+    @apply leading-tight text-xs;
   }
 
   .hljs,

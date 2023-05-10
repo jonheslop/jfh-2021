@@ -15,7 +15,8 @@ export async function getStaticProps({params}) {
   const posts = getRecentPosts([
     'title',
     'date',
-    'slug'
+    'slug',
+    'category'
   ]);
 
   return {
@@ -46,10 +47,19 @@ const Home = ({posts}: Props) => {
         </figcaption>
       </figure>
 
-      <Heading classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-16 mb-4">
-        Work
+      <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-16 mb-4">
+        Photos
       </Heading>
-      {jobs.map(job => <Job key={slugify(job.company)} data={job}/>)}
+
+      <ul className="md:col-start-4">
+        {
+          posts.filter((post) => post.category === 'photos')
+          .map((post) => (
+          <NoteLinkItem key={post.slug} data={post} />
+          ))
+        }
+      </ul>
+      <p className="md:col-start-4"><Link href="/posts/photos">See all photo posts »</Link></p>
 
       <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-32 mb-4">
         Blog posts
@@ -57,12 +67,18 @@ const Home = ({posts}: Props) => {
 
       <ul className="md:col-start-4">
         {
-          posts.map((post) => (
+          posts.filter((post) => post.category !== 'photos')
+          .map((post) => (
           <NoteLinkItem key={post.slug} data={post} />
           ))
         }
       </ul>
       <p className="md:col-start-4"><Link href="/posts">See all posts »</Link></p>
+
+      <Heading classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-48 mb-4">
+        Work
+      </Heading>
+      {jobs.map(job => <Job key={slugify(job.company)} data={job}/>)}
 
     </Layout>
   );
