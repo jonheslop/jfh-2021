@@ -20,4 +20,4 @@ photos:
   - aeaeb6ad-4ad7-451a-5d38-43ee24713800
 ---
 
-Gran Ffondo number 3 at Fforest. Weather was brill, company incredible. Jackson and the Fforest crew smashed it as usual. And Maude has the time of her life running around like a nutter for 4 days.
+Gran Ffondo number three at Fforest. Weather was brill, company incredible. Jackson and the Fforest crew smashed it as usual. And Maude has the time of her life running around like a nutter for four days.
