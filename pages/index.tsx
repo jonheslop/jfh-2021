@@ -39,6 +39,7 @@ export async function getStaticProps({params}) {
 
 type Props = {
   posts: NoteLink[];
+  photoPosts: NoteLink[]
 };
 
 const Home = ({posts, photoPosts}: Props) => {
