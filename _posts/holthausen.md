@@ -3,6 +3,7 @@ title: Holthausen
 description: 'Cycling from London to Holthausen: 520km in 51hrs'
 date: "2023-04-12T19:35:07.322Z"
 category: photos
+coverImage: aa1dfa8a-eae3-47d6-02cd-d2d8dd0e5e00
 photos:
   - c9939a54-f5ec-4370-d605-1ba6b8899700
   - ca041529-797a-4721-c76a-1a17b89fc700
