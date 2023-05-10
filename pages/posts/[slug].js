@@ -34,7 +34,7 @@ export default function Post({ post, morePosts }) {
           />
         </>
       )}
-      {post.photos !== null && (
+      {post.photos !== undefined && (
         <div
           className="col-start-2 col-span-3 w-full relative grid gap-16"
         >
