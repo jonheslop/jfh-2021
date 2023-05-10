@@ -35,10 +35,16 @@ export default function Post({ post, morePosts }) {
         </>
       )}
       {post.photos !== undefined && (
-        <div
-          className="col-start-2 col-span-3 w-full relative grid gap-16"
-        >
-        {post.photos.map((photo) => <Image width={2048} height={1366} alt="" key={photo} src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/large`}/>)}
+        <div className="col-start-2 col-span-3 w-full relative grid gap-16">
+          {post.photos.map((photo) => (
+            <Image
+              width={2048}
+              height={1366}
+              alt=""
+              key={photo}
+              src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/large`}
+            />
+          ))}
         </div>
       )}
     </Layout>

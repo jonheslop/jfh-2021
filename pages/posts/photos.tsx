@@ -16,7 +16,8 @@ export async function getStaticProps({params}) {
     'title',
     'date',
     'slug',
-    'category'
+    'category',
+    'coverImage',
   ]);
 
   return {
