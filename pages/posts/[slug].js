@@ -1,7 +1,6 @@
 import { useRouter } from "next/router.js";
 import ErrorPage from "next/error.js";
 import Head from "next/head.js";
-import Image from 'next/image';
 import { getAllPosts, getPostBySlug } from "../../lib/api.js";
 import markdownToHtml from "../../lib/markdownToHtml.js";
 import Layout from "../../components/layout";
@@ -53,12 +52,13 @@ export default function Post({ post, morePosts }) {
       {post.photos !== undefined && (
         <div className="md:col-start-2 col-span-2 md:col-span-3 w-full relative grid gap-8 md:gap-16">
           {post.photos.map((photo) => (
-            <Image
-              width={2048}
-              height={1366}
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              className="mx-auto"
               alt=""
               key={photo}
-              src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/large`}
+              src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/small`}
+              srcSet={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/small 400w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/medium 1024w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/large 2048w`}
             />
           ))}
         </div>
