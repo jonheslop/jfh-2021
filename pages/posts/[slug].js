@@ -18,6 +18,22 @@ export default function Post({ post, morePosts }) {
 
   return (
     <Layout pageTitle={post.title}>
+      <Head>
+        {post.coverImage !== undefined && (
+          <meta
+            property="og:image"
+            content={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${post.coverImage}/small`}
+            key="og:image"
+          />
+        )}
+        {post.description !== undefined && (
+          <meta
+            property="og:description"
+            content={post.description}
+            key="og:description"
+          />
+        )}
+      </Head>
       {router.isFallback ? (
         <Heading>Loading…</Heading>
       ) : (
@@ -57,6 +73,7 @@ export async function getStaticProps({ params }) {
     "date",
     "slug",
     "author",
+    "description",
     "content",
     "ogImage",
     "coverImage",

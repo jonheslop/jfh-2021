@@ -28,9 +28,9 @@ const Layout = ({pageTitle, children}: Props) => {
         <meta name="description" content="Jon Heslop is a front end developer based in London."/>
         <meta property="og:url" content="http://jonheslop.com/"/>
         <meta property="og:title" content="Jon Heslop"/>
-        <meta property="og:description" content="Jon Heslop is a front end developer based in London."/>
+        <meta property="og:description" content="Jon Heslop is a front end developer based in London." key="og:description"/>
         <meta property="og:type" content="website"/>
-        <meta property="og:image" content="/jon-heslop.jpg"/>
+        <meta property="og:image" content="/jon-heslop.jpg" key="og:image"/>
       </Head>
 
       <div className="flex-1 px-2 py-4 md:p-8 lg:p-16 grid grid-cols-1 md:grid-cols-page-layout auto-rows-min items-start gap-16 relative w-full">
