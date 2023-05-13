@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Heading = ({level = 'h2', classes = '', children}: Props) => {
+const Heading = ({level = 'h2', classes = '', children, ...props}: Props) => {
   const Tag = level;
   let baseClasses: string;
   switch (level) {
@@ -23,7 +23,7 @@ const Heading = ({level = 'h2', classes = '', children}: Props) => {
   }
 
   return (
-    <Tag className={`${baseClasses} ${classes}`}>
+    <Tag className={`${baseClasses} ${classes}`} {...props}>
       {children}
     </Tag>
   );

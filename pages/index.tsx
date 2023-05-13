@@ -60,10 +60,12 @@ const Home = ({posts, photoPosts}: Props) => {
       </figure>
 
       <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-16 mb-4">
-        Photos
+        <Link underline={false} href='#photos'>
+          Photos
+        </Link>
       </Heading>
 
-      <ul className="md:col-start-4">
+      <ul className="md:col-start-4 pt-16 -mt-16" id="photos">
         {
           photoPosts.filter((post) => post.category === 'photos')
           .map((post) => (
@@ -74,10 +76,12 @@ const Home = ({posts, photoPosts}: Props) => {
       <p className="md:col-start-4"><Link href="/posts/photos">See all photo posts »</Link></p>
 
       <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-32 mb-4">
-        Blog posts
+        <Link underline={false} href='#posts'>
+          Blog posts
+        </Link>
       </Heading>
 
-      <ul className="md:col-start-4">
+      <ul className="md:col-start-4 pt-32 -mt-32" id="posts">
         {
           posts.filter((post) => post.category !== 'photos')
           .map((post) => (
@@ -88,8 +92,11 @@ const Home = ({posts, photoPosts}: Props) => {
       <p className="md:col-start-4"><Link href="/posts">See all posts »</Link></p>
 
       <Heading classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-48 mb-4">
-        Work
+        <Link underline={false} href='#work'>
+          Work
+        </Link>
       </Heading>
+      <div className="md:col-start-4 pt-24 -mt-24" id="work"/>
       {jobs.map(job => <Job key={slugify(job.company)} data={job}/>)}
 
     </Layout>
