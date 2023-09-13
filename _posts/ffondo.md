@@ -1,6 +1,6 @@
 ---
 title: Ffondo 2023
-description: 'Ffond number 3'
+description: 'Ffondo number 3'
 date: "2023-04-29T11:35:07.322Z"
 category: photos
 coverImage: b10dab43-5cfd-4ab7-1949-c933fbd3fa00
