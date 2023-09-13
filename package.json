@@ -8,7 +8,9 @@
     "build": "node ./lib/rss/generate-rss && next build",
     "start": "next start",
     "type-check": "tsc",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimise-images": "bunx @squoosh/cli --mozjpeg '{quality:75}' -d batch-out/ batch-in/*",
+    "upload-images": "bun ./upload-images.js"
   },
   "dependencies": {
     "autoprefixer": "^10.0.4",
