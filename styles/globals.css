@@ -67,6 +67,10 @@
     @apply mt-3;
   }
 
+  .post-content blockquote {
+    @apply pl-4 border-l-4 border-gray-200 mb-8;
+  }
+  
   .hljs {
     @apply leading-tight text-xs;
   }

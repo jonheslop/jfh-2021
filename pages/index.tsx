@@ -73,7 +73,7 @@ const Home = ({posts, photoPosts}: Props) => {
           ))
         }
       </ul>
-      <p className="md:col-start-4"><Link href="/posts/photos">See all photo posts »</Link></p>
+      <p className="md:col-start-4 mb-24"><Link href="/posts/photos">See all photo posts »</Link></p>
 
       <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-32 mb-4">
         <Link underline={false} href='#posts'>
@@ -89,7 +89,7 @@ const Home = ({posts, photoPosts}: Props) => {
           ))
         }
       </ul>
-      <p className="md:col-start-4"><Link href="/posts">See all posts »</Link></p>
+      <p className="md:col-start-4 mb-24"><Link href="/posts">See all posts »</Link></p>
 
       <Heading classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-48 mb-4">
         <Link underline={false} href='#work'>
