@@ -1,7 +1,8 @@
 import React from 'react';
+import {StreamPhoto} from '@/interfaces/index';
 
 type Props = {
-  photos: any,
+  photos: Array<StreamPhoto>,
   classes?: string;
 };
 
