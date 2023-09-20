@@ -14,6 +14,7 @@
     "upload-images": "bun ./upload-images.js"
   },
   "dependencies": {
+    "@prisma/client": "5.3.1",
     "autoprefixer": "^10.0.4",
     "date-fns": "^2.19.0",
     "gray-matter": "^4.0.2",
@@ -32,6 +33,7 @@
     "@types/react-dom": "^17.0.1",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.4",
+    "prisma": "5.3.1",
     "rss": "^1.2.2",
     "typescript": "^4.2.2"
   }
