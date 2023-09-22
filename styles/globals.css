@@ -60,7 +60,7 @@
   }
 
   .post-content ul {
-    @apply my-8 list-disc;
+    @apply my-8 list-disc list-inside md:list-outside;
   }
 
   .post-content li + li {
