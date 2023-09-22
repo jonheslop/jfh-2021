@@ -36,4 +36,9 @@ export type StreamPhoto = {
   longitude: number;
 };
 
+export type GroupedStream = {
+  week: number;
+  posts: Array<StreamPhoto>;
+}
+
 export type headingLevel= 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
