@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const colors = require('tailwindcss/colors')
 
 const config: Config = {
   content: [
@@ -14,6 +15,7 @@ const config: Config = {
         'page-layout': '1fr 4fr 1fr 6fr'
       },
       colors: {
+        green: colors.emerald,
         eggplant: '#300d4f',
         kelp: '#2A6355'
       },

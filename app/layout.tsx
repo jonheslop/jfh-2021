@@ -1,48 +1,39 @@
 import './globals.css'
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 import Logo from '@/ui/logo';
 import Footer from '@/ui/footer';
 
-type Props = {
-  pageTitle: string;
-  children: React.ReactNode;
-}
-
-export async function generateMetadata(
-  { pageTitle = 'Hello' }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  return {
-    title: `${pageTitle} - Jon Heslop`,
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Jon Heslop',
+    default: 'Hello',
+  },
+  description: 'Jon Heslop is a front end developer based in London.',
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  openGraph: {
+    title: 'Next.js',
     description: 'Jon Heslop is a front end developer based in London.',
-    viewport: {
-      width: "device-width",
-      initialScale: 1,
-    },
-    openGraph: {
-      title: 'Next.js',
-      description: 'Jon Heslop is a front end developer based in London.',
-      url: 'http://jonheslop.com/',
-      siteName: 'Next.js',
-      images: [
-        {
-          url: 'http://jonheslop.com/jon-heslop.jpg',
-          width: 1280,
-          height: 848,
-        },
-      ],
-      locale: 'en_GB',
-      type: 'website',
-    },
-  }
+    url: 'http://jonheslop.com/',
+    siteName: 'Next.js',
+    images: [
+      {
+        url: 'http://jonheslop.com/jon-heslop.jpg',
+        width: 1280,
+        height: 848,
+      },
+    ],
+    locale: 'en_GB',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
-  pageTitle,
   children,
 }: {
-  pageTitle: string;
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
