@@ -19,10 +19,8 @@ const BaseLink = ({href, external = false, underline = true, classes = '', child
   } : {};
 
   return (
-    <Link href={href}>
-      <a className={`${all_classes}`} {...linkAttributes}>
-        { children }
-      </a>
+    <Link href={href} className={`${all_classes}`} {...linkAttributes}>
+      { children }
     </Link>
   );
 };

@@ -6,10 +6,8 @@
   @font-face {
     font-family: "Söhne web";
     src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot");
-    src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot#iefix")
-        format("embedded-opentype"),
-      url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff2")
-        format("woff2"),
+    src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot#iefix") format("embedded-opentype"),
+      url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff2") format("woff2"),
       url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff") format("woff");
     font-weight: normal;
     font-style: normal;
@@ -27,8 +25,8 @@
     @apply text-gray-500;
   }
 
-  .post-content * + h1,
-  .post-content * + h2 {
+  .post-content *+h1,
+  .post-content *+h2 {
     @apply mt-16;
   }
 
@@ -37,7 +35,7 @@
     @apply text-xl md:text-lg lg:text-xl mb-4;
   }
 
-  .post-content p + p {
+  .post-content p+p {
     @apply mt-8;
   }
 
@@ -52,7 +50,7 @@
   }
 
   .post-content p code {
-    @apply text-base  py-1  px-2  bg-gray-50 text-green-700;
+    @apply text-base py-1 px-2 bg-gray-50 text-green-700;
   }
 
   .post-content pre {
@@ -63,14 +61,14 @@
     @apply my-8 list-disc list-inside md:list-outside;
   }
 
-  .post-content li + li {
+  .post-content li+li {
     @apply mt-3;
   }
 
   .post-content blockquote {
     @apply pl-4 border-l-4 border-gray-200 mb-8;
   }
-  
+
   .hljs {
     @apply leading-tight text-xs;
   }
