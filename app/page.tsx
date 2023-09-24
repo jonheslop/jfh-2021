@@ -1,8 +1,10 @@
 import Image from 'next/image'
+import {jobs} from '@/jobs.js';
+import { allBlogs } from 'contentlayer/generated';
 import Heading from '@/ui/heading';
 import Link from '@/ui/link';
 import NoteLink from '@/ui/note-link';
-import { allBlogs } from 'contentlayer/generated';
+import Job from '@/ui/job';
 
 export default function Home() {
   const recentPosts = allBlogs
@@ -62,6 +64,14 @@ export default function Home() {
         }
       </ul>
       <p className="md:col-start-4 mb-24"><Link href="/posts/photos">See all photo posts »</Link></p>
+
+      <Heading classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-48 mb-4">
+        <Link underline={false} href='#work'>
+          Work
+        </Link>
+      </Heading>
+      <div className="md:col-start-4 pt-24 -mt-24" id="work"/>
+      {jobs.map(job => <Job key={job.company} data={job}/>)}
 
     </>
   )

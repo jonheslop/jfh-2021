@@ -11,6 +11,8 @@ export type Logo = {
   imageURL: string;
   imageAlt: string;
   imageBg: string;
+  width: number;
+  height: number;
 };
 
 export type Post = {
