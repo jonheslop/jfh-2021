@@ -4,6 +4,7 @@ import Logo from '@/ui/logo';
 import Footer from '@/ui/footer';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jonheslop.com'),
   title: {
     template: '%s | Jon Heslop',
     default: 'Hello',
