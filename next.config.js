@@ -1,7 +1,11 @@
 const { createContentlayerPlugin } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ['imagedelivery.net'],
+  },
+};
 
 const withContentlayer = createContentlayerPlugin({
   // Additional Contentlayer config options

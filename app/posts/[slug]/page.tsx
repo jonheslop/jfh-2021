@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image'
 import { allBlogs } from 'contentlayer/generated';
 import Balancer from 'react-wrap-balancer';
 import { Mdx } from '@/ui/mdx';
@@ -67,6 +68,22 @@ export default async function Blog({ params }) {
       <div className="col-span-2 max-w-xl post-content">
         <Mdx code={post.body.code} />
       </div>
+      {post.photos !== undefined && (
+        <div className="md:col-start-2 col-span-2 md:col-span-3 w-full relative grid gap-4 md:gap-8">
+          {post.photos.map((cloudflareId) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              className="mx-auto py-2 md:py-4"
+              alt=""
+              id={`image-${cloudflareId}`}
+              key={cloudflareId}
+              src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/small`}
+              srcSet={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/small 400w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/medium 1024w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/large 2048w`}
+              loading='lazy'
+            />
+          ))}
+        </div>
+      )}
     </>
   );
 }
