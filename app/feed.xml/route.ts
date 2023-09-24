@@ -3,7 +3,7 @@ import { allBlogs } from 'contentlayer/generated';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const SITE_URL = "http://localhost:3000";
+const SITE_URL = "htts://jonheslop.com";
 
 const markdownToHtml = async (markdown) => {
   const result = await remark().use(html).process(markdown);
@@ -13,8 +13,8 @@ const markdownToHtml = async (markdown) => {
 export async function GET() {
   const feed = new Rss({
     title: "Notes - Jon Heslop",
-    site_url: "https://jonheslop.com",
-    feed_url: "https://jonheslop.com/feed.xml",
+    site_url: SITE_URL,
+    feed_url: `${SITE_URL}/feed.xml`,
     description: "Jon Heslop is a front end developer based in London.",
     language: "en",
   });
