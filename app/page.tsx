@@ -10,6 +10,11 @@ export default function Home() {
     .filter((post) => post.category !== 'photos')
     .slice(0,5);
 
+  const recentPhotos = allBlogs
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    .filter((post) => post.category === 'photos')
+    .slice(0,5);
+
   return (
     <>
       <Heading level="h1" classes="mb-4 md:col-span-2 max-w-xl">
@@ -26,7 +31,7 @@ export default function Home() {
         </figcaption>
       </figure>
 
-      <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-32 mb-4">
+      <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-16 mb-4">
         <Link underline={false} href='#posts'>
           Blog posts
         </Link>
@@ -36,11 +41,27 @@ export default function Home() {
         {
           recentPosts
           .map((post) => (
-          <NoteLink key={post.slug} data={post} />
+            <NoteLink key={post.slug} data={post} />
           ))
         }
       </ul>
       <p className="md:col-start-4 mb-24"><Link href="/posts">See all posts »</Link></p>
+
+      <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-32 mb-4">
+        <Link underline={false} href='#photos'>
+          Photos
+        </Link>
+      </Heading>
+
+      <ul className="md:col-start-4 pt-16 -mt-16" id="photos">
+        {
+          recentPhotos.filter((post) => post.category === 'photos')
+          .map((post) => (
+            <NoteLink key={post.slug} data={post} />
+          ))
+        }
+      </ul>
+      <p className="md:col-start-4 mb-24"><Link href="/posts/photos">See all photo posts »</Link></p>
 
     </>
   )
