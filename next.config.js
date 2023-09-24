@@ -1,11 +1,14 @@
-import { withContentlayer } from 'next-contentlayer';
+const { createContentlayerPlugin } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { esmExternals: true },
   images: {
     domains: ['imagedelivery.net'],
   },
 };
 
-export default withContentlayer(nextConfig);
+const withContentlayer = createContentlayerPlugin({
+  // Additional Contentlayer config options
+});
+
+module.exports = withContentlayer(nextConfig);
