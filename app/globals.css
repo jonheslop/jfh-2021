@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Söhne web";
+    src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot");
+    src: url("https://cdn.jonheslop.com/fonts/soehne-web-buch.eot#iefix") format("embedded-opentype"),
+      url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff2") format("woff2"),
+      url("https://cdn.jonheslop.com/fonts/soehne-web-buch.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .post-content h1,
+  .post-content h2 {
+    @apply text-gray-500;
+  }
+
+  .post-content *+h1,
+  .post-content *+h2 {
+    @apply mt-16;
+  }
+
+  .post-content h1,
+  .post-content h2 {
+    @apply text-xl md:text-lg lg:text-xl mb-4;
+  }
+
+  .post-content p+p {
+    @apply mt-8;
+  }
+
+  .post-content p,
+  .post-content li {
+    @apply max-w-xl leading-normal text-xl md:text-lg lg:text-xl;
+  }
+
+  .post-content a:link,
+  .post-content a:visited {
+    @apply underline hover:text-green-600;
+  }
+
+  .post-content p code {
+    @apply text-base py-1 px-2 bg-gray-50 text-green-700;
+  }
+
+  .post-content pre {
+    @apply my-8 p-4 bg-gray-900 text-gray-50 overflow-auto;
+  }
+
+  .post-content ul {
+    @apply my-8 list-disc list-inside md:list-outside;
+  }
+
+  .post-content li+li {
+    @apply mt-3;
+  }
+
+  .post-content blockquote {
+    @apply pl-4 border-l-4 border-gray-200 mb-8;
+  }
+}

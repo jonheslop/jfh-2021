@@ -1,12 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-import {NoteLink} from '@/interfaces/index';
+import Balancer from 'react-wrap-balancer';
 import Heading from './heading';
 import Link from './link';
 import DateFormatter from './date';
+import { Blog } from 'contentlayer/generated'
 
 type Props = {
-  data: NoteLink;
+  data: Blog;
 };
 
 const NoteLinkItem = ({data}: Props) => {
@@ -14,7 +15,9 @@ const NoteLinkItem = ({data}: Props) => {
     <li className="mb-8">
       <Link key={data.slug} href={`/posts/${data.slug}`} underline={false} classes="flex gap-8 justify-between">
         <div>
-          <Heading level="h3" classes="underline">{data.title}</Heading>
+          <Heading level="h3" classes="underline">
+            <Balancer>{data.title}</Balancer>
+          </Heading>
           <p className="mt-1 text-xl md:text-lg lg:text-xl text-gray-500"><DateFormatter dateString={data.date}/></p>
         </div>
         {data.coverImage !== undefined && (

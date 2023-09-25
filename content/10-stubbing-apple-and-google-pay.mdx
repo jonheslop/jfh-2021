@@ -13,7 +13,7 @@ On the other hand I had a go with the Google Pay JS API which shims itself to wo
 
 Next came to work out how we could write browser tests for this, we use [Cypress] which is excellent. However I’d need to stub Apple Pay and the Payment Request API. This turned out to be fairly straight forward I didn’t find much whilst searching for solutions save for this out of date [repo by IndieGoGo].
 
-Cypress makes it pretty easy to stub out a browser function by using the `onBeforeLoad` hook.
+Cypress makes it pretty easy to stub out a browser function by using the <code>onBeforeLoad</code> hook.
 
 ```js
 cy.visit(`/pay`, {
@@ -72,7 +72,7 @@ const getMockApplePayClass = (validPaymentRequestResponse, email) => {
 };
 ```
 
-The `validPaymentRequestResponse` is what Apple Pay returns when the user authorises using their device. You can see [an example reponse here](https://github.com/alphagov/pay-frontend/blob/ad6ece196ced3822ef26547edebcd05f306bb85e/test/cypress/integration/web-payments/apple-pay.spec.js#L8-L36).
+The <code>validPaymentRequestResponse</code> is what Apple Pay returns when the user authorises using their device. You can see [an example reponse here](https://github.com/alphagov/pay-frontend/blob/ad6ece196ced3822ef26547edebcd05f306bb85e/test/cypress/integration/web-payments/apple-pay.spec.js#L8-L36).
 
 ## Stub for Payment Request API
 
@@ -107,7 +107,7 @@ const const getMockPaymentRequest = validPaymentRequestResponse => {
 }
 ```
 
-The `validPaymentRequestResponse` when using the Payment Request API is a little different to with Apple Pay but you can [an example reponse here](https://github.com/alphagov/pay-frontend/blob/ad6ece196ced3822ef26547edebcd05f306bb85e/test/cypress/integration/web-payments/google-pay.spec.js#L8-L28).
+The <code>validPaymentRequestResponse</code> when using the Payment Request API is a little different to with Apple Pay but you can [an example reponse here](https://github.com/alphagov/pay-frontend/blob/ad6ece196ced3822ef26547edebcd05f306bb85e/test/cypress/integration/web-payments/google-pay.spec.js#L8-L28).
 
 Anyway hopefully that will be useful for anyone looking to do this.
 

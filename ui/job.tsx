@@ -3,7 +3,6 @@ import Image from 'next/image';
 import {Job} from '@/interfaces/index';
 import Heading from './heading';
 import Link from './link';
-import {slugify} from '@/utils/slugify';
 
 type Props = {
   data: Job;
@@ -15,15 +14,14 @@ const JobItem = ({data}: Props) => {
       <figure className="md:col-start-3 place-self-start md:justify-self-end flex md:block -mb-8 md:mb-0">
         { data.logos.map(logo => (
           <div
-            key={slugify(logo.imageAlt)}
-            className={`bg-${logo.imageBg} ${logo.imageBg === 'white' && 'border dark:border-none'} ${logo.imageBg === 'black' && 'border dark:border-gray-500'} rounded-full p-3 mr-4 md:mr-0 md:mb-4`}
-            style={{fontSize: 0}}
-          >
+            key={logo.imageURL}
+            className={`bg-${logo.imageBg} ${logo.imageBg === 'white' && 'border dark:border-none'} ${logo.imageBg === 'black' && 'border dark:border-gray-500'} rounded-full mr-4 md:mr-0 md:mb-4 w-20 h-20 flex items-center justify-center`}>
             <Image
               src={logo.imageURL}
               alt={logo.imageAlt}
-              width={48}
-              height={48}/>
+              width={logo.width}
+              height={logo.height}
+              />
           </div>
         ))}
       </figure>
@@ -41,7 +39,7 @@ const JobItem = ({data}: Props) => {
             <ul className="space-y-2">
               {
                 data.blogPosts.map(({href, label}) => (
-                  <li key={slugify(label)} className="text-sm max-w-xs pr-4">
+                  <li key={href} className="text-sm max-w-xs pr-4">
                     <Link external href={href}>
                       {label}
                     </Link>
