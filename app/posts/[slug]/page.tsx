@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image'
 import { allBlogs } from 'contentlayer/generated';
@@ -7,12 +7,18 @@ import { Mdx } from '@/ui/mdx';
 import Heading from '@/ui/heading';
 import DateFormatter from '@/ui/date';
 
-export async function generateMetadata({
-  params,
-}): Promise<Metadata | undefined> {
+type Props = {
+  params: { id: string, slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+ 
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const post = allBlogs.find((post) => post.slug === params.slug);
   if (!post) {
-    return;
+    return {};
   }
 
   const {
@@ -41,7 +47,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({ params }) {
+export default async function Blog({ params }: Props) {
   const post = allBlogs.find((post) => post.slug === params.slug);
 
   if (!post) {

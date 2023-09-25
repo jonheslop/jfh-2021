@@ -5,7 +5,7 @@ import html from 'remark-html';
 
 const SITE_URL = "htts://jonheslop.com";
 
-const markdownToHtml = async (markdown) => {
+const markdownToHtml = async (markdown: string) => {
   const result = await remark().use(html).process(markdown);
   return result.toString();
 };
