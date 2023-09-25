@@ -68,4 +68,8 @@
   .post-content blockquote {
     @apply pl-4 border-l-4 border-gray-200 mb-8;
   }
+
+  .prose ul:first-child {
+    @apply !mt-0;
+  }
 }
