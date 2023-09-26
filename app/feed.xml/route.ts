@@ -15,6 +15,7 @@ export async function GET() {
     title: "Notes - Jon Heslop",
     site_url: SITE_URL,
     feed_url: `${SITE_URL}/feed.xml`,
+    image_url: `${SITE_URL}/favicon.gif`,
     description: "Jon Heslop is a front end developer based in London.",
     language: "en",
   });
