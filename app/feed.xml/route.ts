@@ -12,7 +12,7 @@ const markdownToHtml = async (markdown: string) => {
 
 export async function GET() {
   const feed = new Rss({
-    title: "Notes - Jon Heslop",
+    title: "Jon Heslop - feed",
     site_url: SITE_URL,
     feed_url: `${SITE_URL}/feed.xml`,
     image_url: `${SITE_URL}/favicon.gif`,
