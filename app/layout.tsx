@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://jonheslop.com'),
   title: {
     template: '%s | Jon Heslop',
-    default: 'Hello',
+    default: 'Hello | Jon Heslop',
   },
   description: 'Jon Heslop is a front end developer based in London.',
   viewport: {
