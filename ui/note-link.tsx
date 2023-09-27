@@ -22,7 +22,7 @@ const NoteLinkItem = ({data}: Props) => {
         </div>
         {data.coverImage !== undefined && (
           <figure className='w-28'>
-            <Image width={256} height={171} alt="" src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${data.coverImage}/thumb`}/>
+            <Image loading="lazy" width={256} height={171} alt="" src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${data.coverImage}/thumb`}/>
           </figure>
         )}
       </Link>

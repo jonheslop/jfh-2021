@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     initialScale: 1,
   },
   openGraph: {
-    title: 'Next.js',
+    title: 'Jon Heslop',
     description: 'Jon Heslop is a front end developer based in London.',
     url: 'http://jonheslop.com/',
-    siteName: 'Next.js',
+    siteName: 'jonheslop.com',
     images: [
       {
         url: 'http://jonheslop.com/jon-heslop.jpg',

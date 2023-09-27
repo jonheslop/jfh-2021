@@ -24,6 +24,7 @@ export default function Home() {
       </Heading>
       <figure className="md:col-start-4">
         <Image
+          priority
           src="/jon-heslop.jpg"
           alt="A picture of me in a garden chatting."
           width={1280}
