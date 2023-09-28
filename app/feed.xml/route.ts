@@ -22,7 +22,18 @@ export async function GET() {
 
     await Promise.all(
       allBlogs.map(async (post) => {
-        const content = await markdownToHtml(post.body.raw);
+        var content = await markdownToHtml(post.body.raw);
+
+        if (post.photos !== undefined) {
+          const photos = post.photos.map((photo) => (
+            `<p><img
+              alt=""
+              src="https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/small"
+              srcSet="https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/small 400w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/medium 1024w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo}/large 2048w"
+            /></p>`
+          ));
+          content = content + photos.join(' ');
+        }
 
         feed.item({
           title: post.title,
