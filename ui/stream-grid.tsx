@@ -25,8 +25,9 @@ function groupByWeek(array:Array<StreamPhoto>): Array<GroupedStream> {
   return Object.values(weekArrays);
 }
 
-function getWeekNumber(date) {
+function getWeekNumber(date:Date) {
   const onejan = new Date(date.getFullYear(), 0, 1);
+  // @ts-ignore
   const weekNumber = Math.ceil(((date - onejan) / 86400000 + onejan.getDay() + 1) / 7);
   return weekNumber;
 }
