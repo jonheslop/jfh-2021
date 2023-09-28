@@ -11,7 +11,9 @@ type Props = {
   params: { id: string, slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
- 
+
+export const generateStaticParams = async () => allBlogs.map((post) => ({ slug: post.slug }));
+
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
