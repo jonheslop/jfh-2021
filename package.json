@@ -12,6 +12,7 @@
     "upload-images": "bun ./upload-images.js"
   },
   "dependencies": {
+    "@prisma/client": "^5.3.1",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
     "eslint": "8.50.0",
@@ -37,6 +38,7 @@
     "@types/rss": "^0.0.30",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.30",
+    "prisma": "^5.3.1",
     "tailwindcss": "^3.3.3",
     "typescript": "5.2.2"
   }

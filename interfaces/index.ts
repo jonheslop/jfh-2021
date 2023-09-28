@@ -1,3 +1,5 @@
+export type headingLevel= 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
 export type Job = {
   company: string;
   role: string;
@@ -20,4 +22,17 @@ export type Post = {
   label: string;
 };
 
-export type headingLevel= 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type StreamPhoto = {
+  id: number;
+  createdAt: Date;
+  cloudflareId: string;
+  caption: string;
+  exif: string;
+  latitude: number;
+  longitude: number;
+};
+
+export type GroupedStream = {
+  week: number;
+  posts: Array<StreamPhoto>;
+}
