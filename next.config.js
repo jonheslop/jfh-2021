@@ -3,7 +3,7 @@ const { createContentlayerPlugin } = require('next-contentlayer');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['imagedelivery.net'],
+    domains: ['imagedelivery.net', 'bukk.it'],
   },
 };
 
