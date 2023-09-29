@@ -1,3 +1,5 @@
+import { Photo } from '@prisma/client';
+
 export type headingLevel= 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type Job = {
@@ -22,15 +24,7 @@ export type Post = {
   label: string;
 };
 
-export type StreamPhoto = {
-  id: number;
-  createdAt: Date;
-  cloudflareId: string;
-  caption: string;
-  exif: string;
-  latitude: number;
-  longitude: number;
-};
+export type StreamPhoto = Photo;
 
 export type GroupedStream = {
   week: number;

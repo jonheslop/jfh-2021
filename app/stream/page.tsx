@@ -1,13 +1,12 @@
 import React from 'react';
+import { prisma } from "@/lib/prisma";
 import Heading from '@/ui/heading';
 import StreamGrid from '@/ui/stream-grid';
-import { prisma } from "@/lib/prisma";
 import Link from '@/ui/link';
 
 const Stream = async () => {
-  const photosResult = await prisma.photo.findMany();
+  const photos = await prisma.photo.findMany();
 
-  const photos = JSON.parse(JSON.stringify(photosResult));
   return (
     <>
       <Heading classes="md:sticky top-16">Stream</Heading>
