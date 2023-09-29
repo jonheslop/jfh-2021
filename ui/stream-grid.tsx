@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import { prisma } from "@/lib/prisma";
 import {StreamPhoto, GroupedStream} from '@/interfaces/index';
 import Heading from '@/ui/heading';
 
 type Props = {
-  photos: Array<StreamPhoto>,
   classes?: string;
 };
 
@@ -32,7 +32,9 @@ function getWeekNumber(date:Date) {
   return weekNumber;
 }
 
-const StreamGrid = ({photos, classes = '', ...props}: Props) => {
+const StreamGrid = async ({classes = '', ...props}: Props) => {
+  const photos = await prisma.photo.findMany();
+
   const baseClasses = "grid grid-cols-4 gap-8";
   const grouped = groupByWeek(photos);
 
@@ -40,13 +42,12 @@ const StreamGrid = ({photos, classes = '', ...props}: Props) => {
     <div className={`${classes}`} {...props}>
       {grouped.map(({week, posts}) => {
         return <div key={week}>
-          <Heading classes="md:sticky top-16">Week {week}</Heading>
+          <Heading classes="md:sticky top-16 mb-8">Week {week}</Heading>
           <div className={baseClasses}>
             {
               posts.map((photo) => {
                 return (
                   <img
-                    className="mx-auto py-2 md:py-4"
                     alt=""
                     id={`image-${photo.id}`}
                     key={photo.id}

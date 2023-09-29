@@ -1,12 +1,10 @@
-import React from 'react';
-import { prisma } from "@/lib/prisma";
+import React, {Suspense} from 'react';
 import Heading from '@/ui/heading';
 import StreamGrid from '@/ui/stream-grid';
 import Link from '@/ui/link';
+import Loader from '@/ui/loader';
 
 const Stream = async () => {
-  const photos = await prisma.photo.findMany();
-
   return (
     <>
       <Heading classes="md:sticky top-16">Stream</Heading>
@@ -16,7 +14,9 @@ const Stream = async () => {
           <p className="text-xl md:text-lg lg:text-xl leading-normal">I mostly use the Fujinon 16mm and 35mm lenses. Sometimes I use a Minolta M-Rokkor 40mm, Pentax Asahi Super-Takumar 55mm or Leica Summilux 50mm lens.
         </p>
       </article>
-      <StreamGrid photos={photos} classes="col-span-3 col-start-2"/>
+      <Suspense fallback={<Loader count={8} heading={true} classes="col-start-2 col-span-3"/>}>
+        <StreamGrid classes="col-span-3 col-start-2"/>
+      </Suspense>
     </>
   );
 };
