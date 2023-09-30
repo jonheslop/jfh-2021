@@ -28,7 +28,7 @@ const ExifList = ({exif}: Props) => {
         <li><span className="text-gray-500">Focal length:</span> <span>{exif.FocalLengthIn35mmFormat}</span></li>
         <li><span className="text-gray-500">Time:</span> <span>{<DateFormatter includeTime dateString={exif.CreateDate} />}</span></li>
       </ul>
-      <button onClick={() => setIsExpanded(false)} className="bg-black/10 rounded-full w-8 h-8 flex items-center justify-center text-black">×</button>
+      <button onClick={() => setIsExpanded(false)} className="bg-black/10 rounded-full w-8 h-8 flex items-center justify-center text-black shrink-0">×</button>
     </>
   )
 }

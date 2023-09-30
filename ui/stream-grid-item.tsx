@@ -15,7 +15,7 @@ const StreamGridItem = ({photo, ...props}: Props) => {
       <img
         alt=""
         id={`image-${id}`}
-        src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/small`}/>
+        src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/stream`}/>
     </Link>
   );
 };

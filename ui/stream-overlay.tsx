@@ -12,9 +12,9 @@ const StreamOverlay = ({photo, ...props}: Props) => {
   const parsedExif: Exif = photo.exif ? JSON.parse(photo.exif?.toString()): {};
   return (
     <>
-      <Link href="/stream" className="fixed inset-0 bg-black/10 backdrop-blur-sm"/>
-      <div className="fixed inset-16 flex items-center justify-center pointer-events-none">
-        <div className="bg-white p-8 rounded-lg pointer-events-auto flex gap-8">
+      <Link href={`/stream#image-${photo.id}`} className="fixed inset-0 bg-black/10 backdrop-blur-sm"/>
+      <div className="fixed inset-4 lg:inset-16 flex items-center justify-center pointer-events-none">
+        <div className="bg-white p-2 lg:p-8 rounded-lg pointer-events-auto flex gap-8">
           <img
             className="w-auto max-h-[calc(100vh-12rem)]"
             alt=""
