@@ -1,11 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { prisma } from "@/lib/prisma";
-import {StreamPhoto, GroupedStream} from '@/interfaces/index';
+import {StreamPhoto, GroupedStream, Exif} from '@/interfaces/index';
 import Heading from '@/ui/heading';
+import StreamGridItem from '@/ui/stream-grid-item';
+import StreamOverlay from './stream-overlay';
 
 type Props = {
   classes?: string;
+  selected?: string;
 };
 
 function groupByWeek(array:Array<StreamPhoto>): Array<GroupedStream> {
@@ -32,32 +34,34 @@ function getWeekNumber(date:Date) {
   return weekNumber;
 }
 
-const StreamGrid = async ({classes = '', ...props}: Props) => {
+const StreamGrid = async ({classes = '', selected, ...props}: Props) => {
   const photos = await prisma.photo.findMany();
 
   const baseClasses = "grid grid-cols-4 gap-8";
   const grouped = groupByWeek(photos);
+  
+  console.log(selected, 1);
+  const selectedPhoto = selected !== undefined ? photos.filter(p => p.id === parseInt(selected))[0] : undefined;
 
+  console.log(selectedPhoto);
   return (
-    <div className={`${classes} grid gap-16 bg-white`} {...props}>
-      {grouped.map(({week, posts}) => {
-        return <div key={week}>
-          <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white">Week {week}</Heading>
-          <div className={baseClasses}>
-            {
-              posts.map((photo) => {
-                return (
-                  <img
-                    alt=""
-                    id={`image-${photo.id}`}
-                    key={photo.id}
-                    src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo.cloudflareId}/small`}/>
-                )})
-            }
+    <>
+      <div className={`${classes} grid gap-16 bg-white`} {...props}>
+        {grouped.map(({week, posts}) => {
+          return <div key={week}>
+            <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white">Week {week}</Heading>
+            <div className={baseClasses}>
+              {
+                posts.map((photo) => {
+                  return <StreamGridItem photo={photo} key={photo.id} />
+                })
+              }
+            </div>
           </div>
-        </div>
-      })}
-    </div>
+        })}
+      </div>
+      {selectedPhoto !== undefined && <StreamOverlay photo={selectedPhoto} />}
+    </>
   );
 };
 

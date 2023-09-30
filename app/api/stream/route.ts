@@ -1,5 +1,6 @@
-import { prisma } from "@/lib/prisma";
-import { NextRequest, NextResponse } from "next/server";
+import { Exif } from '@/interfaces';
+import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server';
 
 const { CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN } = process.env;
 
@@ -7,13 +8,15 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
 
-    const f = formData.get("file");
-
-    if (!f) {
+    const image = formData.get('file');
+    const exif = formData.get('exif');
+    if (exif !== null) {
+      formData.append('metadata', exif.toString());
+      formData.delete('exif');
+    }
+    if (!image) {
       return NextResponse.json({error: 'No image from form'}, { status: 400 });
     }
-
-    const file = f as File;
 
     const response = await fetch(
       `https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/images/v1`,
@@ -31,11 +34,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({error: 'Cloudflare error', body: body.errors}, { status: 400 });
     }
 
-    const newEntry = await prisma.photo.create({
-      data: {
-        cloudflareId: body.result.id
-      },
-    });
+    const data:any = {
+        cloudflareId: body.result.id,
+      }
+
+    if (exif !== null) {
+      const parsedExif:Exif = JSON.parse(exif.toString());
+        data.exif = exif.toString();
+      if (parsedExif.latitude) {
+        data.latitude = parsedExif.latitude;
+      }
+      if (parsedExif.longitude) {
+        data.longitude = parsedExif.longitude;
+      }
+    }
+    const newEntry = await prisma.photo.create({data});
 
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = '/stream'
