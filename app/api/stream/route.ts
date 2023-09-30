@@ -41,6 +41,7 @@ export async function POST(request: NextRequest) {
     if (exif !== null) {
       const parsedExif:Exif = JSON.parse(exif.toString());
         data.exif = exif.toString();
+        data.createdAt = parsedExif.CreateDate;
       if (parsedExif.latitude) {
         data.latitude = parsedExif.latitude;
       }
