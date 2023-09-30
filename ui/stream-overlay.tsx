@@ -7,7 +7,6 @@ type Props = {
 };
 
 const StreamOverlay = async ({photo, ...props}: Props) => {
-  console.log(photo)
   return (
     <>
       <div className="fixed inset-0 bg-black/10 backdrop-blur-sm"/>

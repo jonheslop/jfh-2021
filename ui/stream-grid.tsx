@@ -40,10 +40,8 @@ const StreamGrid = async ({classes = '', selected, ...props}: Props) => {
   const baseClasses = "grid grid-cols-4 gap-8";
   const grouped = groupByWeek(photos);
   
-  console.log(selected, 1);
   const selectedPhoto = selected !== undefined ? photos.filter(p => p.id === parseInt(selected))[0] : undefined;
 
-  console.log(selectedPhoto);
   return (
     <>
       <div className={`${classes} grid gap-16 bg-white`} {...props}>
