@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${soehne.variable} font-soehne dark:bg-black dark:text-white flex flex-col items-center justify-center min-h-screen`}>
-        <div className="flex-1 px-2 py-4 md:p-8 lg:p-16 grid grid-cols-1 md:grid-cols-page-layout auto-rows-min items-start gap-16 relative w-full">
+        <div className="flex-1 px-2 py-4 md:p-8 lg:p-16 grid grid-cols-1 md:grid-cols-page-layout auto-rows-min items-start gap-16 relative w-full bg-white">
           <Logo/>
           {children}
         </div>

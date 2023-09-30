@@ -7,7 +7,7 @@ import Loader from '@/ui/loader';
 const Stream = async () => {
   return (
     <>
-      <Heading classes="md:sticky top-16">Stream</Heading>
+      <Heading classes="md:sticky top-16 text-white mix-blend-difference">Stream</Heading>
       <article className="md:col-start-4 space-y-4 mt-3">
         <p className="text-xl md:text-lg lg:text-xl leading-normal">
           Photo posts all shot on a <Link external href="https://en.wikipedia.org/wiki/Fujifilm_X-Pro3">Fujifilm X-Pro3</Link>.</p>

@@ -39,10 +39,10 @@ const StreamGrid = async ({classes = '', ...props}: Props) => {
   const grouped = groupByWeek(photos);
 
   return (
-    <div className={`${classes}`} {...props}>
+    <div className={`${classes} grid gap-16 bg-white`} {...props}>
       {grouped.map(({week, posts}) => {
         return <div key={week}>
-          <Heading classes="md:sticky top-16 mb-8">Week {week}</Heading>
+          <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white">Week {week}</Heading>
           <div className={baseClasses}>
             {
               posts.map((photo) => {
@@ -51,8 +51,7 @@ const StreamGrid = async ({classes = '', ...props}: Props) => {
                     alt=""
                     id={`image-${photo.id}`}
                     key={photo.id}
-                    src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo.cloudflareId}/small`}
-                    srcSet={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo.cloudflareId}/small 400w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo.cloudflareId}/medium 1024w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo.cloudflareId}/large 2048w`} />
+                    src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo.cloudflareId}/small`}/>
                 )})
             }
           </div>
