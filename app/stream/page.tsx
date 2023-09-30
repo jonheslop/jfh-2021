@@ -9,9 +9,8 @@ const Stream = async () => {
     <>
       <Heading classes="md:sticky top-16 text-white mix-blend-difference">Stream</Heading>
       <article className="md:col-start-4 space-y-4 mt-3">
-        <p className="text-xl md:text-lg lg:text-xl leading-normal">
-          Photo posts all shot on a <Link external href="https://en.wikipedia.org/wiki/Fujifilm_X-Pro3">Fujifilm X-Pro3</Link>.</p>
-          <p className="text-xl md:text-lg lg:text-xl leading-normal">I mostly use the Fujinon 16mm and 35mm lenses. Sometimes I use a Minolta M-Rokkor 40mm, Pentax Asahi Super-Takumar 55mm or Leica Summilux 50mm lens.
+        <p className="text-xl md:text-lg lg:text-xl leading-normal max-w-xl">
+          Here’s a stream of my photos, I thought would be fun to build myself somewhere to post them that wasn’t just Instagram. Mostly shot on my X-Pro3 but probably some iPhone pics too.
         </p>
       </article>
       <Suspense fallback={<Loader count={8} heading={true} classes="col-start-2 col-span-3"/>}>
