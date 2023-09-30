@@ -2,7 +2,7 @@
 
 import React, { ChangeEvent, useState } from 'react';
 import {Exif, pickExif} from '@/interfaces/index';
-import exifr from 'exifr/dist/lite.esm.mjs';
+import exifr from 'exifr';
 
 const FileUpload = () => {
   const [isUploading, setIsUploading] = useState<boolean>(false);

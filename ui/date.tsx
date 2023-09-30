@@ -3,10 +3,10 @@ import {parseISO, format} from 'date-fns';
 
 type Props = {
   dateString: string;
-  includeTime: boolean;
+  includeTime?: boolean;
 };
 
-const DateFormatter = ({dateString, includeTime}: Props) => {
+const DateFormatter = ({dateString, includeTime = false}: Props) => {
   const date = parseISO(dateString);
   if (includeTime) {
     return <time dateTime={dateString}>{format(date, 'H:m - d LLLL yyyy')}</time>;
