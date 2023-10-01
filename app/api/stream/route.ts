@@ -52,8 +52,7 @@ export async function POST(request: NextRequest) {
     const newEntry = await prisma.photo.create({data});
 
     const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = '/stream'
-    redirectUrl.hash = `image-${newEntry.id}`;
+    redirectUrl.pathname = `/stream/${newEntry.id}`
     return NextResponse.redirect(redirectUrl);
 
   } catch (error: any) {
