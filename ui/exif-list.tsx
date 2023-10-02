@@ -13,7 +13,7 @@ const ExifList = ({exif}: Props) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   if (!isExpanded) {
-    return <button onClick={() => setIsExpanded(true)} className="bg-white/20 rounded-full w-8 h-8 -ml-20 mt-4 flex items-center justify-center text-white font-serif italic">i</button>
+    return <button onClick={() => setIsExpanded(true)} className="bg-white/20 rounded-full w-8 h-8 absolute top-6 lg:top-12 right-6 lg:right-12 flex items-center justify-center text-white font-serif italic">i</button>
   }
 
   return (

@@ -3,7 +3,6 @@ import { prisma } from "@/lib/prisma";
 import {StreamPhoto, GroupedStream, Exif} from '@/interfaces/index';
 import Heading from '@/ui/heading';
 import StreamGridItem from '@/ui/stream-grid-item';
-import StreamOverlay from './stream-overlay';
 
 type Props = {
   classes?: string;
@@ -24,7 +23,9 @@ function groupByWeek(array:Array<StreamPhoto>): Array<GroupedStream> {
     weekArrays[weekNumber].posts.push(obj);
   });
 
-  return Object.values(weekArrays);
+  const grouped: Array<GroupedStream> = Object.values(weekArrays);
+
+  return grouped.reverse();
 }
 
 function getWeekNumber(date:Date) {
@@ -40,26 +41,21 @@ const StreamGrid = async ({classes = '', selected, ...props}: Props) => {
   const baseClasses = "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-4 lg:gap-8";
   const grouped = groupByWeek(photos);
   
-  const selectedPhoto = selected !== undefined ? photos.filter(p => p.id === parseInt(selected))[0] : undefined;
-
   return (
-    <>
-      <div className={`${classes} grid gap-16 bg-white`} {...props}>
-        {grouped.map(({week, posts}) => {
-          return <div key={week}>
-            <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white">Week {week}</Heading>
-            <div className={baseClasses}>
-              {
-                posts.map((photo) => {
-                  return <StreamGridItem photo={photo} key={photo.id} />
-                })
-              }
-            </div>
+    <div className={`${classes} grid gap-16 bg-white`} {...props}>
+      {grouped.map(({week, posts}) => {
+        return <div key={week}>
+          <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white">Week {week}</Heading>
+          <div className={baseClasses}>
+            {
+              posts.map((photo) => {
+                return <StreamGridItem photo={photo} key={photo.id} />
+              })
+            }
           </div>
-        })}
-      </div>
-      {selectedPhoto !== undefined && <StreamOverlay photo={selectedPhoto} />}
-    </>
+        </div>
+      })}
+    </div>
   );
 };
 
