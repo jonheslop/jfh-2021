@@ -35,9 +35,9 @@ function getWeekNumber(date:Date) {
 }
 
 const StreamGrid = async ({classes = '', selected, ...props}: Props) => {
-  const photos = await prisma.photo.findMany();
+  const photos = await prisma.photo.findMany({orderBy: [{createdAt: 'asc'}]});
 
-  const baseClasses = "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-4 lg:gap-8";
+  const baseClasses = "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-4 lg:gap-8";
   const grouped = groupByWeek(photos);
   
   const selectedPhoto = selected !== undefined ? photos.filter(p => p.id === parseInt(selected))[0] : undefined;
