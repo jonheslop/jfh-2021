@@ -14,6 +14,7 @@ export default function NotFound() {
         <p><Link href="/">Go back to the homepage</Link></p>
       </article>
       <Image src="https://bukk.it/helpcomputer.gif"
+        priority
         className="col-start-4 row-start-1"
         width={500}
         height={375}
