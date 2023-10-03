@@ -17,7 +17,7 @@ function groupByWeek(array:Array<StreamPhoto>): Array<GroupedStream> {
     const weekNumber = getWeekNumber(createdAt);
 
     if (!weekArrays[weekNumber]) {
-      weekArrays[weekNumber] = { week: weekNumber, createdAt , posts: []};
+      weekArrays[weekNumber] = { week: weekNumber, weekBegins: getMonday(createdAt) , posts: []};
     }
 
     weekArrays[weekNumber].posts.push(obj);
@@ -26,6 +26,13 @@ function groupByWeek(array:Array<StreamPhoto>): Array<GroupedStream> {
   const grouped: Array<GroupedStream> = Object.values(weekArrays);
 
   return grouped.reverse();
+}
+
+function getMonday(d:Date) {
+  d = new Date(d);
+  const day = d.getDay();
+  const diff = d.getDate() - day + (day == 0 ? -6:1); // adjust when day is sunday
+  return new Date(d.setDate(diff));
 }
 
 function getWeekNumber(date:Date) {
@@ -43,9 +50,9 @@ const StreamGrid = async ({classes = '', selected, ...props}: Props) => {
   
   return (
     <div className={`${classes} grid gap-16 bg-white`} {...props}>
-      {grouped.map(({week, createdAt, posts}) => {
+      {grouped.map(({week, weekBegins, posts}) => {
         return <div key={week}>
-          <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white"><abbr className="no-underline" title={`Week beginning ${createdAt.toDateString()}`}>Week {week}</abbr></Heading>
+          <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white"><abbr className="no-underline" title={`Week beginning ${weekBegins.toDateString()}`}>Week {week}</abbr></Heading>
           <div className={baseClasses}>
             {
               posts.map((photo) => {
