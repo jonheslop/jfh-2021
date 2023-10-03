@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     template: '%s | Jon Heslop',
     default: 'Hello | Jon Heslop',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://jonheslop.com/feed.xml',
+    }
+  },
   description: 'Jon Heslop is a front end developer based in London.',
   viewport: {
     width: "device-width",
