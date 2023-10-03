@@ -15,7 +15,7 @@ type Props = {
 const ExifList = ({exif, isExpanded, setExpanded}: Props) => {
 
   if (!isExpanded) {
-    return <button title="Show photo exif data" onClick={() => setExpanded(true)} className="bg-white/20 rounded-full w-8 h-8 absolute top-6 lg:top-8 right-6 lg:right-8 flex items-center justify-center font-serif italic group-hover:bg-emerald-600 bg-blend-multiply">i</button>
+    return <button title="Show photo exif data" onClick={() => setExpanded(true)} className="bg-white/20 rounded-full w-8 h-8 absolute top-6 lg:top-8 right-6 lg:right-8 flex items-center justify-center font-serif italic group-hover:bg-emerald-600 group-hover:text-white bg-blend-multiply">i</button>
   }
 
   return (
