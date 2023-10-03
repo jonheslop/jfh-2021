@@ -28,6 +28,7 @@ export type StreamPhoto = Photo;
 
 export type GroupedStream = {
   week: number;
+  createdAt: Date;
   posts: Array<StreamPhoto>;
 }
 

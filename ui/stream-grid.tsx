@@ -1,6 +1,6 @@
 import React from 'react';
 import { prisma } from "@/lib/prisma";
-import {StreamPhoto, GroupedStream, Exif} from '@/interfaces/index';
+import { StreamPhoto, GroupedStream } from '@/interfaces/index';
 import Heading from '@/ui/heading';
 import StreamGridItem from '@/ui/stream-grid-item';
 
@@ -17,7 +17,7 @@ function groupByWeek(array:Array<StreamPhoto>): Array<GroupedStream> {
     const weekNumber = getWeekNumber(createdAt);
 
     if (!weekArrays[weekNumber]) {
-      weekArrays[weekNumber] = { week: weekNumber, posts: []};
+      weekArrays[weekNumber] = { week: weekNumber, createdAt , posts: []};
     }
 
     weekArrays[weekNumber].posts.push(obj);
@@ -43,9 +43,9 @@ const StreamGrid = async ({classes = '', selected, ...props}: Props) => {
   
   return (
     <div className={`${classes} grid gap-16 bg-white`} {...props}>
-      {grouped.map(({week, posts}) => {
+      {grouped.map(({week, createdAt, posts}) => {
         return <div key={week}>
-          <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white">Week {week}</Heading>
+          <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white"><abbr className="no-underline" title={`Week beginning ${createdAt.toDateString()}`}>Week {week}</abbr></Heading>
           <div className={baseClasses}>
             {
               posts.map((photo) => {
