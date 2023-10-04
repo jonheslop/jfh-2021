@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import {useSwipeable} from "react-swipeable"
+import useKeypress from "react-use-keypress";
 import { Exif, StreamPhoto } from "@/interfaces";
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
@@ -21,12 +22,19 @@ const StreamOverlay = ({photo, nextPhoto, prevPhoto, ...props}: Props) => {
   const parsedExif: Exif = photo.exif ? JSON.parse(photo.exif?.toString()): {};
 
   const handlers = useSwipeable({
-    onSwiped: (eventData) => console.log("User Swiped!", eventData),
-    onSwipedLeft: () => nextPhoto !== undefined ? router.push(`/stream/${nextPhoto}`) : null,
-    onSwipedRight: () => prevPhoto !== undefined ? router.push(`/stream/${prevPhoto}`) : null,
-    onSwipedUp: () => router.push("/stream"),
-    onSwipedDown: () => router.push("/stream"),
+    onSwipedLeft: () => goToNextPhoto(),
+    onSwipedRight: () => goToPrevPhoto(),
+    onSwipedUp: () => goToIndex(),
+    onSwipedDown: () => goToIndex(),
   });
+
+  const goToPrevPhoto = () => prevPhoto !== undefined ? router.push(`/stream/${prevPhoto}`) : null;
+  const goToNextPhoto = () => nextPhoto !== undefined ? router.push(`/stream/${nextPhoto}`) : null;
+  const goToIndex = () => router.push("/stream");
+
+  useKeypress('ArrowRight', () => goToNextPhoto());
+  useKeypress('ArrowLeft', () => goToPrevPhoto());
+  useKeypress('Escape', () => goToIndex());
 
   return (
     <>
