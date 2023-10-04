@@ -16,6 +16,9 @@ const Stream = async ({ params }: Props) => {
 
   const selectedPhoto = photoId !== undefined ? await prisma.photo.findFirst({where: {id: photoId}}) : null;
 
+  const prevPhoto = photoId !== undefined ? await prisma.photo.findFirst({where: {createdAt: {gt: selectedPhoto?.createdAt}}, orderBy: [{createdAt: 'asc'}], take: 1, select: {id: true}}) : null;
+  const nextPhoto = photoId !== undefined ? await prisma.photo.findFirst({where: {createdAt: {lt: selectedPhoto?.createdAt}}, orderBy: [{createdAt: 'desc'}], take: 1, select: {id: true}}) : null;
+
   return (
     <>
       <Heading classes="md:sticky top-16 text-white mix-blend-difference md:col-span-2">Stream</Heading>
@@ -25,7 +28,7 @@ const Stream = async ({ params }: Props) => {
       <Suspense fallback={<Loader count={8} heading={true} classes="md:col-start-2 md:col-span-3"/>}>
         <StreamGrid classes="md:col-span-3 md:col-start-2"/>
       </Suspense>
-      {selectedPhoto !== null && <StreamOverlay photo={selectedPhoto} />}
+      {selectedPhoto !== null && <StreamOverlay photo={selectedPhoto} nextPhoto={nextPhoto?.id} prevPhoto={prevPhoto?.id} />}
     </>
   );
 };
