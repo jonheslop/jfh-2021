@@ -32,8 +32,8 @@ const StreamOverlay = ({photo, nextPhoto, prevPhoto, ...props}: Props) => {
   const goToNextPhoto = () => nextPhoto !== undefined ? router.push(`/stream/${nextPhoto}`) : null;
   const goToIndex = () => router.push("/stream");
 
-  useKeypress('ArrowRight', () => goToNextPhoto());
-  useKeypress('ArrowLeft', () => goToPrevPhoto());
+  useKeypress(['ArrowRight', 'KeyJ'], () => goToNextPhoto());
+  useKeypress(['ArrowLeft', 'KeyK'], () => goToPrevPhoto());
   useKeypress('Escape', () => goToIndex());
 
   return (
