@@ -17,6 +17,7 @@ const Stream = async ({ params }: Props) => {
   const selectedPhoto = photoId !== undefined ? await prisma.photo.findFirst({where: {id: photoId}}) : null;
 
   const prevPhoto = photoId !== undefined ? await prisma.photo.findFirst({where: {createdAt: {gt: selectedPhoto?.createdAt}}, orderBy: [{createdAt: 'asc'}], take: 1, select: {id: true}}) : null;
+
   const nextPhoto = photoId !== undefined ? await prisma.photo.findFirst({where: {createdAt: {lt: selectedPhoto?.createdAt}}, orderBy: [{createdAt: 'desc'}], take: 1, select: {id: true}}) : null;
 
   return (
