@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <Heading level="h2" classes="md:col-start-2 border-b md:border-none md:sticky top-16">
+      <Heading level="h2" classes="md:col-start-2 md:col-span-3 border-b md:border-none md:sticky top-16">
         <Link underline={false} href='#stream'>
           So far this week&hellip;
         </Link>
