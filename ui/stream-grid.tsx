@@ -7,6 +7,7 @@ import StreamGridItem from '@/ui/stream-grid-item';
 type Props = {
   classes?: string;
   selected?: string;
+  currentWeekOnly?: boolean;
 };
 
 function groupByWeek(array:Array<StreamPhoto>): Array<GroupedStream> {
@@ -42,18 +43,28 @@ function getWeekNumber(date:Date) {
   return weekNumber;
 }
 
-const StreamGrid = async ({classes = '', selected, ...props}: Props) => {
-  const photos = await prisma.photo.findMany({orderBy: [{createdAt: 'desc'}]});
+const StreamGrid = async ({classes = '', selected, currentWeekOnly = false, ...props}: Props) => {
+  const photos = currentWeekOnly ? await prisma.photo.findMany({
+    where: {createdAt: {gte: getMonday(new Date)}},
+    orderBy: [{createdAt: 'desc'}],
+  }) : await prisma.photo.findMany({
+    orderBy: [{createdAt: 'desc'}],
+  });
 
-  const baseClasses = "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-4 lg:gap-8";
+  const baseClasses = "grid gap-2 md:gap-4 lg:gap-8";
+  const gridClasses = currentWeekOnly ? `grid-cols-2  ${photos.length > 4 ? "md:grid-cols-8" : "md:grid-cols-4"}` : " grid-cols-2 md:grid-cols-4 lg:grid-cols-8 2xl:grid-cols-6"
   const grouped = groupByWeek(photos);
   
+  if (photos.length === 0) {
+    return null
+  }
+
   return (
     <div className={`${classes} grid gap-16 bg-white`} {...props}>
       {grouped.map(({week, weekBegins, posts}) => {
         return <div key={week}>
-          <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white"><abbr className="no-underline" title={`Week beginning ${weekBegins.toDateString()}`}>Week {week}</abbr></Heading>
-          <div className={baseClasses}>
+          {!currentWeekOnly && <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white"><abbr className="no-underline" title={`Week beginning ${weekBegins.toDateString()}`}>Week {week}</abbr></Heading>}
+          <div className={`${baseClasses} ${gridClasses}`}>
             {
               posts.map((photo) => {
                 return <StreamGridItem photo={photo} key={photo.id} />
