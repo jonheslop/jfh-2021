@@ -26,7 +26,7 @@ export default function Home() {
         </Link>
       </Heading>
 
-      <StreamGrid id="stream" classes="md:col-span-3 md:col-start-2 pt-32 -mt-32" currentWeekOnly/>
+      <StreamGrid id="stream" classes="md:col-span-3 md:col-start-2 md:pt-32 md:-mt-32" currentWeekOnly/>
 
       <p className="md:col-start-2 mb-24"><Link href="/stream">See photo stream archive »</Link></p>
 
@@ -70,10 +70,13 @@ export default function Home() {
       <div className="md:col-start-4 pt-24 -mt-24" id="work"/>
       {jobs.map(job => <Job key={job.company} data={job}/>)}
 
-      <Heading level="h2" classes="mb-4 md:col-start-2 md:col-span-2 max-w-xl md:sticky top-80">
-        About
+      <Heading level="h2" classes="md:col-start-2 border-b md:border-none md:sticky top-80">
+        <Link underline={false} href='#About'>
+          About
+        </Link>
       </Heading>
-      <p className="md:col-start-2 md:col-span-2 max-w-xl md:sticky top-96 text-xl">
+
+      <p className="md:col-start-2 md:col-span-2 max-w-xl md:sticky top-96 text-xl pt-24 -mt-24" id="about">
         Jon Heslop is a front end developer based in&nbsp;London.
         </p>
       <figure className="md:col-start-4">
