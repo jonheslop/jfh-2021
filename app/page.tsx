@@ -1,3 +1,4 @@
+import React, {Suspense} from 'react';
 import Image from 'next/image'
 import {jobs} from '@/jobs.js';
 import { allBlogs } from 'contentlayer/generated';
@@ -6,6 +7,7 @@ import Link from '@/ui/link';
 import NoteLink from '@/ui/note-link';
 import Job from '@/ui/job';
 import StreamGrid from '@/ui/stream-grid';
+import Loader from '@/ui/loader';
 
 export default function Home() {
   const recentPosts = allBlogs
@@ -26,7 +28,9 @@ export default function Home() {
         </Link>
       </Heading>
 
-      <StreamGrid id="stream" classes="md:col-span-3 md:col-start-2 md:pt-32 md:-mt-32" currentWeekOnly/>
+      <Suspense fallback={<Loader count={8} classes="md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8"/>}>
+        <StreamGrid id="stream" classes="md:col-span-3 md:col-start-2 md:pt-32 md:-mt-32" currentWeekOnly/>
+      </Suspense>
 
       <p className="md:col-start-2 mb-24"><Link href="/stream">See photo stream archive »</Link></p>
 
