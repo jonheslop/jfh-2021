@@ -4,7 +4,7 @@ import { StreamPhoto, GroupedStream } from '@/interfaces/index';
 import Heading from '@/ui/heading';
 import StreamGridItem from '@/ui/stream-grid-item';
 
-type Props = {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   classes?: string;
   selected?: string;
   currentWeekOnly?: boolean;
