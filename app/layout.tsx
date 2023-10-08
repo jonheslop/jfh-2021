@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Logo from '@/ui/logo';
@@ -62,6 +63,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer/>
+        <Analytics />
       </body>
     </html>
   )
