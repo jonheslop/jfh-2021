@@ -24,7 +24,9 @@ export type Post = {
   label: string;
 };
 
-export type StreamPhoto = Photo;
+export type StreamPhoto = Photo & {
+  aspect: 'portrait' | 'landscape' | 'square';
+};
 
 export type GroupedStream = {
   week: number;
