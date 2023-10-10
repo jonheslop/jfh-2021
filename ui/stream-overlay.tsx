@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
@@ -9,23 +8,23 @@ import { Exif, StreamPhoto } from '@/interfaces';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import ExifList from './exif-list';
-=======
-'use client'
-
-import React, { useState } from "react";
-import {useSwipeable} from "react-swipeable"
-import useKeypress from "react-use-keypress";
-import { Exif, StreamPhoto } from "@/interfaces";
-import { useRouter } from 'next/navigation'
-import Link from "next/link";
-import Image from "next/image";
-import ExifList from "./exif-list";
->>>>>>> 038d0c5 (Get width/height when adding an image)
 
 type Props = {
   photo: StreamPhoto;
   nextPhoto?: number;
   prevPhoto?: number;
+};
+
+const getAspect = (photo: StreamPhoto) => {
+  const ratio = photo.width / photo.height;
+  switch (true) {
+    case ratio < 1:
+      return 'portrait';
+    case ratio > 1:
+      return 'landscape';
+    case ratio === 1:
+      return 'square';
+  }
 };
 
 const StreamOverlay = ({ photo, nextPhoto, prevPhoto, ...props }: Props) => {
