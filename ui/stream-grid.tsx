@@ -33,13 +33,15 @@ function getMonday(d:Date) {
   d = new Date(d);
   const day = d.getDay();
   const diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
-  return new Date(d.setDate(diff));
+  d.setDate(diff);
+  d.setHours(0,0,0,0);
+  return new Date(d);
 }
 
 function getWeekNumber(date:Date) {
   const onejan = new Date(date.getFullYear(), 0, 1);
   // @ts-ignore
-  const weekNumber = Math.ceil(((date - onejan) / 86400000 + onejan.getDay()) / 7);
+  const weekNumber = Math.ceil(((date - onejan) / 86400000 + onejan.getDay() - 1) / 7);
   return weekNumber;
 }
 
