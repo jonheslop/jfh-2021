@@ -73,11 +73,11 @@ export default async function Blog({ params }: Props) {
           <DateFormatter dateString={post.date} />
         </p>
       </header>
-      <div className="md:col-start-4 col-span-2 md:col-span-1 max-w-xl post-content">
+      <div className="md:col-start-4 md:col-span-1 max-w-xl post-content">
         <Mdx code={post.body.code} />
       </div>
       {post.photos !== undefined && (
-        <div className="md:col-start-2 col-span-2 md:col-span-3 w-full relative grid gap-4 md:gap-8">
+        <div className="md:col-start-2 md:col-span-3 w-full relative grid gap-4 md:gap-8">
           {post.photos.map((cloudflareId) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img
