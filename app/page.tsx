@@ -73,27 +73,6 @@ export default function Home() {
       </Heading>
       <div className="md:col-start-4 pt-24 -mt-24" id="work"/>
       {jobs.map(job => <Job key={job.company} data={job}/>)}
-
-      <Heading level="h2" classes="md:col-start-2 border-b md:border-none md:sticky top-80">
-        <Link underline={false} href='#About'>
-          About
-        </Link>
-      </Heading>
-
-      <p className="md:col-start-2 md:col-span-2 max-w-xl md:sticky top-96 text-xl pt-24 -mt-24" id="about">
-        Jon Heslop is a front end developer based in&nbsp;London.
-        </p>
-      <figure className="md:col-start-4">
-        <Image
-          priority
-          src="/jon-heslop.jpg"
-          alt="A picture of me in a garden chatting."
-          width={1280}
-          height={848}/>
-        <figcaption className="text-xs text-gray-500 text-right">
-          Photo by <Link external href="https://tomalprice.com/">Tom Price</Link>
-        </figcaption>
-      </figure>
     </>
   )
 }
