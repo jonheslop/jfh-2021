@@ -32,7 +32,6 @@ const Footer = () => {
           <li><Link external light href="https://last.fm/user/jonheslop">Last.fm</Link></li>
           <li><Link external light href="https://letterboxd.com/jonheslop/">Letterboxd</Link></li>
           <li><Link external light href="https://twitter.com/jonheslop">Twitter</Link></li>
-          <li><Link external light href="https://vsco.co/jonheslop/">VSCO</Link></li>
         </ul>
 
         <ul className="flex gap-4" role="navigation">
