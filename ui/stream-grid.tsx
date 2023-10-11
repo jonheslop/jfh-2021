@@ -62,7 +62,7 @@ const StreamGrid = async ({classes = '', selected, currentWeekOnly = false, ...p
   }
 
   return (
-    <div className={`${classes} grid gap-16 bg-white`} {...props}>
+    <div className={`${classes} grid gap-16 bg-white dark:bg-black`} {...props}>
       {grouped.map(({week, weekBegins, posts}) => {
         return <div key={week}>
           {!currentWeekOnly && <Heading classes="md:sticky top-24 mb-8 mix-blend-difference text-white"><abbr className="no-underline" title={`Week beginning ${weekBegins.toDateString()}`}>Week {week}</abbr></Heading>}

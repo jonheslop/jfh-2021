@@ -15,11 +15,11 @@ type Props = {
 const ExifList = ({exif, isExpanded, setExpanded}: Props) => {
 
   if (!isExpanded) {
-    return <button title="Show photo exif data" onClick={() => setExpanded(true)} className="bg-white/20 rounded-full w-8 h-8 absolute top-6 lg:top-8 right-6 lg:right-8 flex items-center justify-center font-serif italic group-hover:bg-emerald-600 group-hover:text-white bg-blend-multiply">i</button>
+    return <button title="Show photo exif data" onClick={() => setExpanded(true)} className="bg-white/20 rounded-full w-8 h-8 absolute top-6 right-6 flex items-center justify-center font-serif italic group-hover:bg-emerald-600 group-hover:text-white bg-blend-multiply">i</button>
   }
 
   return (
-    <div className="relative">
+    <div className="relative dark:py-2">
       <Heading level="h4" classes="mb-4">Exif</Heading>
       <ul className="list space-y-2 text-sm">
         <li><span className="text-gray-500">Camera:</span> <span>{exif.Model}</span></li>
@@ -31,7 +31,7 @@ const ExifList = ({exif, isExpanded, setExpanded}: Props) => {
         <li><span className="text-gray-500">Focal length:</span> <span>{exif.FocalLengthIn35mmFormat}</span></li>
         <li><span className="text-gray-500">Time:</span> <span>{<DateFormatter includeTime dateString={exif.CreateDate} />}</span></li>
       </ul>
-      <button onClick={() => setExpanded(false)} className="bg-black/10 rounded-full w-8 h-8 flex items-center justify-center text-black absolute top-0 right-0 hover:bg-emerald-600 hover:text-white">×</button>
+      <button onClick={() => setExpanded(false)} className="bg-black/10 dark:bg-white/10 rounded-full w-8 h-8 flex items-center justify-center text-black dark:text-white absolute top-0 right-0 dark:top-2 dark:right-2 hover:bg-emerald-600 hover:text-white">×</button>
     </div>
   )
 }

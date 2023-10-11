@@ -44,17 +44,19 @@ const StreamOverlay = ({photo, nextPhoto, prevPhoto, ...props}: Props) => {
         <Link href={`/stream/${prevPhoto}`} className="hidden self-stretch lg:flex items-center text-6xl text-white p-4 flex-1 hover:-translate-x-8 transition-all">&larr;</Link>}
         {!prevPhoto &&
         <span className="self-stretch flex items-center justify-end flex-1"/>}
-        
-        <div className={`bg-white p-2 lg:p-6 2xl:p-8 grid ${isExpanded ? "grid-cols-3" : "grid-cols-1"} gap-2 lg:gap-4 relative w-100 group`} {...handlers}>
+
+        <div className={`bg-white p-2 lg:p-6 2xl:p-8 w-100 group`} {...handlers}>
+          <div className={`dark:bg-black grid ${isExpanded ? "grid-cols-3" : "grid-cols-1"} gap-2 lg:gap-4 relative`}>
           <img
             className="w-auto max-h-[calc(100vh-12rem)] col-span-2 self-center"
             alt=""
             id={`image-${photo.id}`}
             src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${photo.cloudflareId}/large`}/>
 
-          {
-            Object.keys(parsedExif).length !== 0 && <ExifList exif={parsedExif} isExpanded={isExpanded} setExpanded={(bool:boolean) => setIsExpanded(bool)}/>
-          }
+            {
+              Object.keys(parsedExif).length !== 0 && <ExifList exif={parsedExif} isExpanded={isExpanded} setExpanded={(bool:boolean) => setIsExpanded(bool)}/>
+            }
+          </div>
         </div>
 
         {nextPhoto &&
