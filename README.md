@@ -12,4 +12,4 @@ Deployed with [Vercel]
 [next.js]: https://nextjs.org/
 [vercel]: https://vercel.com/
 [Cloudflare images]: https://www.cloudflare.com/en-gb/developer-platform/cloudflare-images/
-[Planetsale]: https://planetscale.com/
+[Planetscale]: https://planetscale.com/
