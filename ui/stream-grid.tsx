@@ -12,7 +12,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   currentWeekOnly?: boolean;
 };
 
-const StreamGrid = async ({photos, classes = '', selected, currentWeekOnly = false, ...props}: Props) => {
+const StreamGrid = ({photos, classes = '', selected, currentWeekOnly = false, ...props}: Props) => {
 
   const baseClasses = "grid gap-2 md:gap-4 lg:gap-8";
   const gridClasses = currentWeekOnly ? `grid-cols-2  ${photos.length > 4 ? "md:grid-cols-8" : "md:grid-cols-4"}` : " grid-cols-2 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6"

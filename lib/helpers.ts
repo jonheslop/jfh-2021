@@ -1,5 +1,13 @@
 import { StreamPhoto, GroupedStream } from '@/interfaces/index';
 
+export async function fetcher<JSON = any>(
+  input: RequestInfo,
+  init?: RequestInit
+): Promise<JSON> {
+  const res = await fetch(input, init);
+  return res.json();
+}
+
 export function convertToClosestFraction(decimal: number): string {
   const epsilon = 1.0E-5;
   let numerator = 1;

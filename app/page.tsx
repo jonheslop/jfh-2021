@@ -1,12 +1,12 @@
-import React, {Suspense} from 'react';
+import React, { Suspense } from 'react';
 import Image from 'next/image'
-import {jobs} from '@/jobs.js';
+import { jobs } from '@/jobs.js';
 import { allBlogs } from 'contentlayer/generated';
 import Heading from '@/ui/heading';
 import Link from '@/ui/link';
 import NoteLink from '@/ui/note-link';
 import Job from '@/ui/job';
-import StreamGrid from '@/ui/stream-grid';
+import RecentStream from '@/ui/recent-stream';
 import Loader from '@/ui/loader';
 import { fetchStreamCurrentWeek } from '@/lib/fetch-stream';
 
@@ -24,25 +24,9 @@ export default async function Home() {
   const photos = await fetchStreamCurrentWeek();
   const photosIsEmpty = photos.length === 0;
 
-  const headingStickyPositions = ['top-16', 'top-32', 'top-48', 'top-64']
-
   return (
     <>
-      {!photosIsEmpty && (
-        <>
-          <Heading level="h2" classes="md:col-start-2 md:col-span-3 border-b md:border-none md:sticky top-16">
-            <Link underline={false} href='#stream'>
-              So far this week&hellip;
-            </Link>
-          </Heading>
-
-          <Suspense fallback={<Loader count={8} classes="md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8"/>}>
-            <StreamGrid photos={photos} id="stream" classes="md:col-span-3 md:col-start-2 md:pt-32 md:-mt-32" currentWeekOnly/>
-          </Suspense>
-
-          <p className="md:col-start-2 mb-24"><Link href="/stream">See photo stream archive »</Link></p>
-        </>
-      )}
+      <RecentStream />
       <Heading level="h2" classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky ${photosIsEmpty ? 'top-16' : 'top-32'}`}>
         <Link underline={false} href='#posts'>
           Blog posts
