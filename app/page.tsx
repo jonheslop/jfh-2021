@@ -8,8 +8,9 @@ import NoteLink from '@/ui/note-link';
 import Job from '@/ui/job';
 import StreamGrid from '@/ui/stream-grid';
 import Loader from '@/ui/loader';
+import { fetchStreamCurrentWeek } from '@/lib/fetch-stream';
 
-export default function Home() {
+export default async function Home() {
   const recentPosts = allBlogs
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
     .filter((post) => post.category !== 'photos')
@@ -20,21 +21,29 @@ export default function Home() {
     .filter((post) => post.category === 'photos')
     .slice(0,5);
 
+  const photos = await fetchStreamCurrentWeek();
+  const photosIsEmpty = photos.length === 0;
+
+  const headingStickyPositions = ['top-16', 'top-32', 'top-48', 'top-64']
+
   return (
     <>
-      <Heading level="h2" classes="md:col-start-2 md:col-span-3 border-b md:border-none md:sticky top-16">
-        <Link underline={false} href='#stream'>
-          So far this week&hellip;
-        </Link>
-      </Heading>
+      {!photosIsEmpty && (
+        <>
+          <Heading level="h2" classes="md:col-start-2 md:col-span-3 border-b md:border-none md:sticky top-16">
+            <Link underline={false} href='#stream'>
+              So far this week&hellip;
+            </Link>
+          </Heading>
 
-      <Suspense fallback={<Loader count={8} classes="md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8"/>}>
-        <StreamGrid id="stream" classes="md:col-span-3 md:col-start-2 md:pt-32 md:-mt-32" currentWeekOnly/>
-      </Suspense>
+          <Suspense fallback={<Loader count={8} classes="md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8"/>}>
+            <StreamGrid photos={photos} id="stream" classes="md:col-span-3 md:col-start-2 md:pt-32 md:-mt-32" currentWeekOnly/>
+          </Suspense>
 
-      <p className="md:col-start-2 mb-24"><Link href="/stream">See photo stream archive »</Link></p>
-
-      <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-32 mb-4">
+          <p className="md:col-start-2 mb-24"><Link href="/stream">See photo stream archive »</Link></p>
+        </>
+      )}
+      <Heading level="h2" classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky ${photosIsEmpty ? 'top-16' : 'top-32'}`}>
         <Link underline={false} href='#posts'>
           Blog posts
         </Link>
@@ -50,7 +59,7 @@ export default function Home() {
       </ul>
       <p className="md:col-start-4 mb-24"><Link href="/posts">See all posts »</Link></p>
 
-      <Heading level="h2" classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-48 mb-4">
+      <Heading level="h2" classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky ${photosIsEmpty ? 'top-32' : 'top-48'}`}>
         <Link underline={false} href='#photos'>
           Photos
         </Link>
@@ -66,7 +75,7 @@ export default function Home() {
       </ul>
       <p className="md:col-start-4 mb-24"><Link href="/posts/photos">See all photo posts »</Link></p>
 
-      <Heading classes="md:col-start-2 border-b pb-2 md:border-none md:sticky top-64 mb-4">
+      <Heading classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky ${photosIsEmpty ? 'top-48' : 'top-64'}`}>
         <Link underline={false} href='#work'>
           Work
         </Link>
