@@ -1,8 +1,15 @@
 import { Exif } from '@/interfaces';
 import { prisma } from '@/lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
+import { fetchStreamCurrentWeek} from '@/lib/fetch-stream';
 
 const { CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN } = process.env;
+
+export async function GET(request: NextRequest) {
+  const photos = await fetchStreamCurrentWeek();
+
+  return NextResponse.json(photos);
+}
 
 export async function POST(request: NextRequest) {
   try {

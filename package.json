@@ -34,7 +34,8 @@
     "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.0",
     "rss": "^1.2.2",
-    "shiki": "^0.14.4"
+    "shiki": "^0.14.4",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "@types/node": "20.6.3",
