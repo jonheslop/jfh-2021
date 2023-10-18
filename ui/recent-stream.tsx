@@ -10,7 +10,7 @@ import { fetcher } from '@/lib/helpers';
 import { StreamPhoto } from '@/interfaces';
 
 const RecentStream = () => {
-  const { data, error, isLoading } = useSWR<StreamPhoto[]>('http://localhost:3000/api/stream', fetcher);
+  const { data, error, isLoading } = useSWR<StreamPhoto[]>('/api/stream', fetcher);
 
   if (isLoading) {
     return <Loader count={8} classes="md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8"/>
