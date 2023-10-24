@@ -8,17 +8,17 @@ import Heading from '@/ui/heading';
 import DateFormatter from '@/ui/date';
 
 type Props = {
-  params: { id: string, slug: string }
+  params: { id: string, slug: string[] }
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export const generateStaticParams = async () => allBlogs.map((post) => ({ slug: post.slug }));
+export const generateStaticParams = async () => allBlogs.map((post) => ({ slug: post.slug.split('/') }));
 
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = allBlogs.find((post) => post.slug === params.slug.join('/'));
   if (!post) {
     return {};
   }
@@ -50,7 +50,7 @@ export async function generateMetadata(
 }
 
 export default async function Blog({ params }: Props) {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = allBlogs.find((post) => post.slug === params.slug.join('/'));
 
   if (!post) {
     notFound();

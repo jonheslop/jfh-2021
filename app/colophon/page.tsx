@@ -32,10 +32,10 @@ const Colophon = () => {
         </p>
 
         <p className="text-xl md:text-lg lg:text-xl leading-normal max-w-xl">
-          I’ve wrote a little more about <Link href="/posts/15-redesign">this iteration here</Link>.
+          I’ve wrote a little more about <Link href="/posts/2021/15-redesign">this iteration here</Link>.
         </p>
         <p className="text-xl md:text-lg lg:text-xl leading-normal max-w-xl">
-          And here is <Link href="/posts/15-archive">an archive of all the old sites here</Link>.
+          And here is <Link href="/posts/2021/15-archive">an archive of all the old sites here</Link>.
         </p>
       </article>
     </>
