@@ -20,7 +20,7 @@ const computedFields = {
       dateModified: doc.date,
       description: doc.description,
       image: doc.image,
-      url: `https://jonheslop.com/${doc._raw.flattenedPath}`,
+      url: `https://jonheslop.com/posts/${doc._raw.flattenedPath}`,
       author: {
         '@type': 'Person',
         name: 'Jon Heslop',

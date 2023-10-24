@@ -39,7 +39,7 @@ export async function generateMetadata(
       description,
       type: 'article',
       publishedTime,
-      url: `https://jonheslop.com/${slug}`,
+      url: `https://jonheslop.com/posts/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',
