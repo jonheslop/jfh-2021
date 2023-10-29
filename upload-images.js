@@ -1,5 +1,5 @@
 const fs = require('fs');
-const directoryPath = './batch';
+const directoryPath = './batch-out';
 const { CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID } = process.env;
 
 fs.readdir(directoryPath, (err, files) => {
