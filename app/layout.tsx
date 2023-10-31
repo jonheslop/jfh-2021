@@ -1,6 +1,6 @@
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react';
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import Logo from '@/ui/logo';
 import Footer from '@/ui/footer';
@@ -29,10 +29,6 @@ export const metadata: Metadata = {
     }
   },
   description: 'Jon Heslop is a front end developer based in London.',
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   openGraph: {
     title: 'Jon Heslop',
     description: 'Jon Heslop is a front end developer based in London.',
@@ -48,6 +44,11 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     type: 'website',
   },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
