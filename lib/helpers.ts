@@ -39,18 +39,20 @@ export function groupByWeek(array:Array<StreamPhoto>): Array<GroupedStream> {
 
   array.forEach(obj => {
     const createdAt = new Date(obj.createdAt);
+    const year = createdAt.getFullYear();
     const weekNumber = getWeekNumber(createdAt);
+    const weekYear = `${year}-${weekNumber}`
 
-    if (!weekArrays[weekNumber]) {
-      weekArrays[weekNumber] = { week: weekNumber, weekBegins: getMonday(createdAt) , posts: []};
+    if (!weekArrays[weekYear]) {
+      weekArrays[weekYear] = { year, week: weekNumber, weekBegins: getMonday(createdAt) , posts: []};
     }
 
-    weekArrays[weekNumber].posts.push(obj);
+    weekArrays[weekYear].posts.push(obj);
   });
 
   const grouped: Array<GroupedStream> = Object.values(weekArrays);
 
-  return grouped.reverse();
+  return grouped;
 }
 
 export function getMonday(d:Date) {
