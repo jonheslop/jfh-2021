@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image'
+import Image from 'next/image';
 import { allBlogs } from 'contentlayer/generated';
 import Balancer from 'react-wrap-balancer';
 import { Mdx } from '@/ui/mdx';
@@ -8,11 +8,12 @@ import Heading from '@/ui/heading';
 import DateFormatter from '@/ui/date';
 
 type Props = {
-  params: { id: string, slug: string[] }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+  params: { id: string; slug: string[] };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-export const generateStaticParams = async () => allBlogs.map((post) => ({ slug: post.slug.split('/') }));
+export const generateStaticParams = async () =>
+  allBlogs.map((post) => ({ slug: post.slug.split('/') }));
 
 export async function generateMetadata(
   { params, searchParams }: Props,
@@ -23,13 +24,7 @@ export async function generateMetadata(
     return {};
   }
 
-  const {
-    title,
-    date: publishedTime,
-    description,
-    image,
-    slug,
-  } = post;
+  const { title, date: publishedTime, description, image, slug } = post;
 
   return {
     title,
@@ -87,7 +82,7 @@ export default async function Blog({ params }: Props) {
               key={cloudflareId}
               src={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/small`}
               srcSet={`https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/small 400w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/medium 1024w, https://imagedelivery.net/tfgleCjJafHVtd2F4ngDnQ/${cloudflareId}/large 2048w`}
-              loading='lazy'
+              loading="lazy"
             />
           ))}
         </div>

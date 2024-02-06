@@ -57,7 +57,7 @@ export const Blog = defineDocumentType(() => ({
     photos: {
       type: 'list',
       of: {
-        type: 'string'
+        type: 'string',
       },
     },
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import {headingLevel} from '@/interfaces/index';
+import { headingLevel } from '@/interfaces/index';
 
 type Props = {
   level?: headingLevel;
@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Heading = ({level = 'h2', classes = '', children, ...props}: Props) => {
+const Heading = ({ level = 'h2', classes = '', children, ...props }: Props) => {
   const Tag = level;
   let baseClasses: string;
   switch (level) {

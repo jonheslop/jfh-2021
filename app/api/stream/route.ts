@@ -1,7 +1,7 @@
 import { Exif } from '@/interfaces';
 import { prisma } from '@/lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
-import { fetchStreamCurrentWeek} from '@/lib/fetch-stream';
+import { fetchStreamCurrentWeek } from '@/lib/fetch-stream';
 
 const { CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN } = process.env;
 
@@ -22,7 +22,10 @@ export async function POST(request: NextRequest) {
       formData.delete('exif');
     }
     if (!image) {
-      return NextResponse.json({error: 'No image from form'}, { status: 400 });
+      return NextResponse.json(
+        { error: 'No image from form' },
+        { status: 400 }
+      );
     }
 
     const response = await fetch(
@@ -38,17 +41,20 @@ export async function POST(request: NextRequest) {
     const body = await response.json();
 
     if (body.success !== true) {
-      return NextResponse.json({error: 'Cloudflare error', body: body.errors}, { status: 400 });
+      return NextResponse.json(
+        { error: 'Cloudflare error', body: body.errors },
+        { status: 400 }
+      );
     }
 
-    const data:any = {
-        cloudflareId: body.result.id,
-      }
+    const data: any = {
+      cloudflareId: body.result.id,
+    };
 
     if (exif !== null) {
-      const parsedExif:Exif = JSON.parse(exif.toString());
-        data.exif = exif.toString();
-        data.createdAt = parsedExif.CreateDate;
+      const parsedExif: Exif = JSON.parse(exif.toString());
+      data.exif = exif.toString();
+      data.createdAt = parsedExif.CreateDate;
       if (parsedExif.latitude) {
         data.latitude = parsedExif.latitude;
       }
@@ -56,12 +62,11 @@ export async function POST(request: NextRequest) {
         data.longitude = parsedExif.longitude;
       }
     }
-    const newEntry = await prisma.photo.create({data});
+    const newEntry = await prisma.photo.create({ data });
 
     const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = `/stream/${newEntry.id}`
+    redirectUrl.pathname = `/stream/${newEntry.id}`;
     return NextResponse.redirect(redirectUrl);
-
   } catch (error: any) {
     return new NextResponse(error.message, { status: 500 });
   }
