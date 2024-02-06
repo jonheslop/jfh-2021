@@ -7,6 +7,7 @@ import Loader from '@/ui/loader';
 import StreamOverlay from '@/ui/stream-overlay';
 import { StreamPhoto } from '@/interfaces';
 import { fetchStream } from '@/lib/fetch-stream';
+import BaseLink from '@/ui/link';
 
 type Props = {
   params: { photo: string[] };
@@ -49,9 +50,16 @@ const Stream = async ({ params }: Props) => {
         Stream
       </Heading>
       <p className="text-xl md:text-lg lg:text-xl leading-normal max-w-xl md:col-start-4 mt-3">
-        Here’s a stream of my photos, I thought would be fun to build myself
-        somewhere to post them that wasn’t just Instagram. Mostly shot on my
-        X-Pro3 but occasionally the odd iPhone pic too.
+        Here is a stream of my photos, I thought would be fun to build myself
+        somewhere to post them that was not just{' '}
+        <BaseLink external href="https://instagram.com/jonheslop">
+          Instagram
+        </BaseLink>
+        . Almost all the shots were taken on my{' '}
+        <BaseLink external href="https://en.wikipedia.org/wiki/Fujifilm_X-Pro3">
+          X-Pro3
+        </BaseLink>{' '}
+        but there’s the odd iPhone picture too.
       </p>
       <Suspense
         fallback={
