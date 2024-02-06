@@ -1,6 +1,6 @@
 import { Photo } from '@prisma/client';
 
-export type headingLevel= 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type headingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type Job = {
   company: string;
@@ -30,7 +30,7 @@ export type GroupedStream = {
   week: number;
   weekBegins: Date;
   posts: Array<StreamPhoto>;
-}
+};
 
 export type Exif = {
   Make: string;
@@ -44,7 +44,7 @@ export type Exif = {
   LensModel: string;
   latitude?: number;
   longitude?: number;
-}
+};
 
 export function pickExif(rawObject: any): Exif {
   const validProperties: Exif = {

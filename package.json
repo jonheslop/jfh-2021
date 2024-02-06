@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --fix",
     "optimise-images": "bunx @squoosh/cli --mozjpeg '{quality:75}' -d batch-out/ batch-in/*",
     "upload-images": "bun ./upload-images.js",
     "postinstall": "prisma generate"

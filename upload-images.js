@@ -30,7 +30,7 @@ fs.readdir(directoryPath, (err, files) => {
       const body = await response.json();
       console.log(body.success === true ? '✔' : '✗', file);
       if (body.success === false) {
-        console.log(body.errors)
+        console.log(body.errors);
       }
     }
   });

@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss'
-const colors = require('tailwindcss/colors')
+import type { Config } from 'tailwindcss';
+const colors = require('tailwindcss/colors');
 
 const config: Config = {
   content: [
@@ -12,18 +12,18 @@ const config: Config = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'page-layout': '1fr 4fr 1fr 6fr'
+        'page-layout': '1fr 4fr 1fr 6fr',
       },
       colors: {
         green: colors.emerald,
         eggplant: '#300d4f',
-        kelp: '#2A6355'
+        kelp: '#2A6355',
       },
       fontFamily: {
-        soehne: ['var(--font-soehne)']
+        soehne: ['var(--font-soehne)'],
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
