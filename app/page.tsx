@@ -26,7 +26,7 @@ export default async function Home() {
 
   return (
     <>
-      <RecentStream />
+      {!photosIsEmpty && <RecentStream photos={photos} />}
       <Heading
         level="h2"
         classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky ${
