@@ -72,6 +72,7 @@ export async function POST(request: NextRequest) {
         data.longitude = parsedExif.longitude;
       }
     }
+
     const newEntry = await prisma.photo.create({ data });
 
     const redirectUrl = request.nextUrl.clone();
