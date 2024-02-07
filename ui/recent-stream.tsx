@@ -1,12 +1,7 @@
-'use client';
-
-import React, { Suspense } from 'react';
-import useSWR from 'swr';
+import React from 'react';
 import Heading from '@/ui/heading';
 import Link from '@/ui/link';
 import StreamGrid from '@/ui/stream-grid';
-import Loader from '@/ui/loader';
-import { fetcher } from '@/lib/helpers';
 import { StreamPhoto } from '@/interfaces';
 
 const RecentStream = ({ photos }: { photos: StreamPhoto[] }) => {

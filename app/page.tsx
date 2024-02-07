@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { jobs } from '@/jobs.js';
 import { allBlogs } from 'contentlayer/generated';
@@ -7,7 +7,6 @@ import Link from '@/ui/link';
 import NoteLink from '@/ui/note-link';
 import Job from '@/ui/job';
 import RecentStream from '@/ui/recent-stream';
-import Loader from '@/ui/loader';
 import { fetchStreamCurrentWeek } from '@/lib/fetch-stream';
 
 export const revalidate = 3600; // revalidate the data at most every hour
