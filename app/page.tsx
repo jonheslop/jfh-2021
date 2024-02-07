@@ -10,6 +10,8 @@ import RecentStream from '@/ui/recent-stream';
 import Loader from '@/ui/loader';
 import { fetchStreamCurrentWeek } from '@/lib/fetch-stream';
 
+export const revalidate = 3600; // revalidate the data at most every hour
+
 export default async function Home() {
   const recentPosts = allBlogs
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
