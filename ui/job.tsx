@@ -31,7 +31,7 @@ const JobItem = ({ data }: Props) => {
         ))}
       </figure>
       <div className="md:col-start-4 mb-16 md:mb-32">
-        <header className="mb-16">
+        <header className="mb-8">
           <Heading level="h3">{data.company}</Heading>
           <Heading level="h4">
             {data.role}, {data.period}
