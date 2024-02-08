@@ -16,6 +16,22 @@ export const jobs = [
     ],
   },
   {
+    company: 'Albion Cycling',
+    role: 'Project lead developer',
+    period: 'January 2022 - April 2022',
+    description:
+      'Albion is an outdoor clothing brand, with a focus on adventure and sustainability. I lead the rebuild of the site, we migrated from a custom Wordpress frontend to a React powered headless store with Hydrogen and Oxygen, Shopify’s latest and most powerful storefront.',
+    logos: [
+      {
+        imageURL: '/albion.svg',
+        imageAlt: 'The Crezco logo',
+        imageBg: 'white',
+        width: 42,
+        height: 50,
+      },
+    ],
+  },
+  {
     company: 'Pusher',
     role: 'Senior front end developer',
     period: 'November 2019 - June 2021',
