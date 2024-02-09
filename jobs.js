@@ -20,7 +20,7 @@ export const jobs = [
     role: 'Project lead developer',
     period: 'January 2022 - April 2022',
     description:
-      'Albion is an outdoor clothing brand, with a focus on adventure and sustainability. I lead the rebuild of the site, we migrated from a custom Wordpress frontend to a React powered headless store with Hydrogen and Oxygen, Shopify’s latest and most powerful storefront.',
+      'Albion is an outdoor clothing brand, with a focus on adventure and sustainability. I led the rebuild of the site, we migrated from a custom Wordpress frontend to a React powered headless store with Hydrogen and Oxygen, Shopify’s latest and most powerful storefront.',
     logos: [
       {
         imageURL: '/albion.svg',
