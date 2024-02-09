@@ -9,18 +9,20 @@ const Footer = () => {
     <footer className="w-full px-2 py-8 md:p-8 lg:p-16 lg:py-32 xl:py-64 text-xs md:text-sm bg-emerald-600 text-white grid grid-cols-page-layout gap-4 lg:gap-16">
       <Logo mono />
       <figure className="col-start-2 hidden lg:block">
-        <Image
-          className="border-8 border-white mix-blend-luminosity hover:mix-blend-normal"
-          src="/jon-heslop.jpg"
-          alt="A picture of me in a garden chatting."
-          width={640}
-          height={424}
-        />
+        <div className="border-8 border-white">
+          <Image
+            className="block mix-blend-luminosity opacity-70 hover:mix-blend-normal hover:opacity-100"
+            src="/jon-heslop-2024.jpg"
+            alt="A picture of me in a garden chatting."
+            width={640}
+            height={427}
+          />
+        </div>
         <figcaption className="text-xs mt-1 -mb-4">
-          Photo by{' '}
-          <Link light external href="https://tomalprice.com/">
-            Tom Price
-          </Link>
+          Self-portrait, Fujifilm X-Pro3, Leica Summilux-M 50 ƒ/1.4{' '}
+          <span className="lowercase" style={{ fontVariant: 'small-caps' }}>
+            ASPH
+          </span>
         </figcaption>
       </figure>
       <section className="col-span-4 md:col-start-3 lg:col-start-4 lg:col-span-1 flex flex-col gap-2">
