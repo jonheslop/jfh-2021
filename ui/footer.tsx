@@ -34,8 +34,11 @@ const Footer = () => {
           <abbr title="North East London, UK" className="cursor-help">
             Walthamstow
           </abbr>
-          . He lives with his wife Rebecca and their dog, Maude. He enjoys
-          cycling, cooking and hanging out with friends.
+          . He lives with his wife{' '}
+          <Link href="https://www.instagram.com/becgoss/">Rebecca</Link> and
+          their dog,{' '}
+          <Link href="https://www.instagram.com/maudethebord/">Maude</Link>. He
+          enjoys cycling, cooking and hanging out with friends.
         </p>
 
         <ul className="flex flex-wrap gap-4 mt-auto">
