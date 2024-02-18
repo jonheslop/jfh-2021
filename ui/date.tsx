@@ -10,7 +10,7 @@ const DateFormatter = ({ dateString, includeTime = false }: Props) => {
   const date = parseISO(dateString);
   if (includeTime) {
     return (
-      <time dateTime={dateString}>{format(date, 'H:m - d LLLL yyyy')}</time>
+      <time dateTime={dateString}>{format(date, 'H:mm - d LLLL yyyy')}</time>
     );
   } else {
     return <time dateTime={dateString}>{format(date, 'd LLLL yyyy')}</time>;
