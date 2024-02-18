@@ -21,17 +21,12 @@ export default async function Home() {
     .filter((post) => post.category === 'photos')
     .slice(0, 5);
 
-  const photos = await fetchStreamCurrentWeek();
-  const photosIsEmpty = photos.length === 0;
-
   return (
     <>
       <RecentStream />
       <Heading
         level="h2"
-        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky ${
-          photosIsEmpty ? 'top-16' : 'top-32'
-        }`}
+        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-32`}
       >
         <Link underline={false} href="#posts">
           Blog posts
@@ -49,9 +44,7 @@ export default async function Home() {
 
       <Heading
         level="h2"
-        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky ${
-          photosIsEmpty ? 'top-32' : 'top-48'
-        }`}
+        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-48`}
       >
         <Link underline={false} href="#photos">
           Photos
@@ -70,9 +63,7 @@ export default async function Home() {
       </p>
 
       <Heading
-        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky ${
-          photosIsEmpty ? 'top-48' : 'top-64'
-        }`}
+        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-64`}
       >
         <Link underline={false} href="#work">
           Work

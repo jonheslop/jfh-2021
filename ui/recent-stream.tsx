@@ -9,56 +9,65 @@ import Loader from '@/ui/loader';
 import { fetcher } from '@/lib/helpers';
 import { StreamPhoto } from '@/interfaces';
 
+const Nothing = () => {
+  return (
+    <>
+      {'Nothing…'.split('').map((letter: string) => (
+        <div
+          key={`letter-${letter}`}
+          className="h-[185px] flex items-center justify-center bg-gray-200 text-8xl text-white uppercase"
+        >
+          {letter}
+        </div>
+      ))}
+    </>
+  );
+};
+
 const RecentStream = () => {
   const { data, error, isLoading } = useSWR<StreamPhoto[]>(
     '/api/stream',
     fetcher
   );
 
-  if (isLoading) {
-    return (
-      <Loader
-        count={8}
-        classes="md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8"
-      />
-    );
-  }
+  return (
+    <>
+      <Heading
+        level="h2"
+        classes="md:col-start-2 md:col-span-3 border-b md:border-none md:sticky top-16"
+      >
+        <Link underline={false} href="#stream">
+          So far this week&hellip;
+        </Link>
+      </Heading>
 
-  if (data?.length !== 0 && data !== undefined) {
-    return (
-      <>
-        <Heading
-          level="h2"
-          classes="md:col-start-2 md:col-span-3 border-b md:border-none md:sticky top-16"
-        >
-          <Link underline={false} href="#stream">
-            So far this week&hellip;
-          </Link>
-        </Heading>
+      {isLoading && (
+        <Loader
+          count={8}
+          classes="md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8"
+        />
+      )}
 
-        <Suspense
-          fallback={
-            <Loader
-              count={8}
-              classes="md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8"
-            />
-          }
-        >
-          <StreamGrid
-            photos={data}
-            id="stream"
-            classes="md:col-span-3 md:col-start-2 md:pt-32 md:-mt-32"
-            currentWeekOnly
-          />
-        </Suspense>
+      {data?.length === 0 && (
+        <div className="grid gap-8 md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8">
+          <Nothing />
+        </div>
+      )}
 
-        <p className="md:col-start-2 mb-24">
-          <Link href="/stream">See photo stream archive »</Link>
-        </p>
-      </>
-    );
-  }
-  return null;
+      {data?.length !== 0 && data !== undefined && (
+        <StreamGrid
+          photos={data}
+          id="stream"
+          classes="md:col-span-3 md:col-start-2 md:pt-32 md:-mt-32"
+          currentWeekOnly
+        />
+      )}
+
+      <p className="md:col-start-2 mb-24">
+        <Link href="/stream">See all stream posts »</Link>
+      </p>
+    </>
+  );
 };
 
 export default RecentStream;

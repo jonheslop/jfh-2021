@@ -15,10 +15,7 @@ const Loader = ({ count, heading, classes }: Props) => {
         </span>
       ) : null}
       {[...Array(count)].map(() => (
-        <div
-          key={crypto.randomUUID()}
-          className="bg-gray-200 h-36 rounded-lg"
-        />
+        <div key={crypto.randomUUID()} className="bg-gray-200 h-[185px]" />
       ))}
     </div>
   );
