@@ -51,7 +51,9 @@ const Stream = async ({ params }: Props) => {
       <p className="text-xl md:text-lg lg:text-xl leading-normal max-w-xl md:col-start-4 mt-3">
         Here’s a stream of my photos, I thought would be fun to build myself
         somewhere to post them that wasn’t just Instagram. Mostly shot on my
-        X-Pro3 but occasionally the odd iPhone pic too.
+        X-Pro3 but occasionally the odd iPhone pic too. Get ready for a lot of
+        pictures of{' '}
+        <Link href="https://www.instagram.com/maudethebord/">Maude</Link>.
       </p>
       <Suspense
         fallback={
