@@ -6,7 +6,7 @@ import Logo from './logo';
 
 const Footer = () => {
   return (
-    <footer className="w-full px-2 py-8 md:p-8 lg:p-16 lg:py-32 xl:py-64 text-xs md:text-sm bg-emerald-600 text-white grid grid-cols-page-layout gap-4 lg:gap-16">
+    <footer className="w-full px-2 py-8 md:p-8 lg:p-16 lg:py-32 mt-16 text-xs md:text-sm bg-emerald-600 text-white grid grid-cols-page-layout gap-4 lg:gap-16">
       <Logo mono />
       <figure className="col-start-2 hidden lg:block">
         <div className="border-8 border-white">
