@@ -13,6 +13,11 @@ const soehne = localFont({
       weight: '400',
       style: 'normal',
     },
+    {
+      path: './fonts/soehne-web-buch-kursiv.woff2',
+      weight: '400',
+      style: 'italic',
+    },
   ],
   display: 'swap',
   variable: '--font-soehne',
