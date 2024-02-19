@@ -49,7 +49,7 @@ const RecentStream = () => {
       )}
 
       {data?.length === 0 && (
-        <div className="grid gap-8 md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8">
+        <div className="grid gap-2 md:gap-4 lg:gap-8 md:col-start-2 md:col-span-3 grid-cols-2 md:grid-cols-8">
           <Nothing />
         </div>
       )}
