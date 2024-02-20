@@ -15,7 +15,7 @@ const Nothing = () => {
       {'Nothing…'.split('').map((letter: string) => (
         <div
           key={`letter-${letter}`}
-          className="aspect-[2/3] flex items-center justify-center bg-gray-200 text-8xl text-white uppercase"
+          className="aspect-[2/3] flex items-center justify-center bg-gray-200  dark:bg-gray-800 text-8xl text-white dark:text-black uppercase"
         >
           {letter}
         </div>
