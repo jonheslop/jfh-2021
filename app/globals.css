@@ -56,7 +56,7 @@
   }
 
   .post-content blockquote {
-    @apply mb-8 border-l-4 border-gray-200 pl-4;
+    @apply my-8 border-l-4 border-gray-200 pl-4;
   }
 
   .prose ul:first-child {
