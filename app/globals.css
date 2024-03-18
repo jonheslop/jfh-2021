@@ -62,4 +62,7 @@
   .prose ul:first-child {
     @apply !mt-0;
   }
+  .post-content small {
+    @apply text-gray-500 mb-4 block;
+  }
 }
