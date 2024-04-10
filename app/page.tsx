@@ -6,7 +6,6 @@ import Heading from '@/ui/heading';
 import Link from '@/ui/link';
 import NoteLink from '@/ui/note-link';
 import Job from '@/ui/job';
-import RecentStream from '@/ui/recent-stream';
 import Loader from '@/ui/loader';
 import { fetchStreamCurrentWeek } from '@/lib/fetch-stream';
 
@@ -23,7 +22,6 @@ export default async function Home() {
 
   return (
     <>
-      <RecentStream />
       <Heading
         level="h2"
         classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-32`}
