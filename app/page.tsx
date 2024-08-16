@@ -24,7 +24,7 @@ export default async function Home() {
     <>
       <Heading
         level="h2"
-        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-32`}
+        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-16`}
       >
         <Link underline={false} href="#posts">
           Blog posts
@@ -42,7 +42,7 @@ export default async function Home() {
 
       <Heading
         level="h2"
-        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-48`}
+        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-32`}
       >
         <Link underline={false} href="#photos">
           Photos
@@ -61,7 +61,7 @@ export default async function Home() {
       </p>
 
       <Heading
-        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-64`}
+        classes={`md:col-start-2 border-b pb-2 md:border-none mb-4 md:sticky top-48`}
       >
         <Link underline={false} href="#work">
           Work
