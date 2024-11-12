@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from './link';
-import Heading from './heading';
-import Image from 'next/image';
-import Logo from './logo';
+import React from "react";
+import Link from "./link";
+import Heading from "./heading";
+import Image from "next/image";
+import Logo from "./logo";
 
 const Footer = () => {
   return (
@@ -19,8 +19,8 @@ const Footer = () => {
           />
         </div>
         <figcaption className="text-xs mt-1 -mb-4">
-          Self-portrait, Fujifilm X-Pro3, Leica Summilux-M 50 ƒ/1.4{' '}
-          <span className="lowercase" style={{ fontVariant: 'small-caps' }}>
+          Self-portrait, Fujifilm X-Pro3, Leica Summilux-M 50 ƒ/1.4{" "}
+          <span className="lowercase" style={{ fontVariant: "small-caps" }}>
             ASPH
           </span>
         </figcaption>
@@ -34,9 +34,9 @@ const Footer = () => {
           <abbr title="North East London, UK" className="cursor-help">
             Walthamstow
           </abbr>
-          . He lives with his wife{' '}
+          . He lives with his wife{" "}
           <Link href="https://www.instagram.com/becgoss/">Rebecca</Link> and
-          their dog,{' '}
+          their dog,{" "}
           <Link href="https://www.instagram.com/maudethebord/">Maude</Link>. He
           enjoys cycling, cooking and hanging out with friends.
         </p>
@@ -66,8 +66,12 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link external light href="https://twitter.com/jonheslop">
-              Twitter
+            <Link
+              external
+              light
+              href="https://bsky.app/profile/jonheslop.bsky.social"
+            >
+              Bluesky
             </Link>
           </li>
         </ul>
