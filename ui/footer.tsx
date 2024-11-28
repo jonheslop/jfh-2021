@@ -66,11 +66,7 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link
-              external
-              light
-              href="https://bsky.app/profile/jonheslop.bsky.social"
-            >
+            <Link external light href="https://bsky.app/profile/jonheslop.com">
               Bluesky
             </Link>
           </li>
