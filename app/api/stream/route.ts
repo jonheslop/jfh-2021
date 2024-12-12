@@ -17,9 +17,17 @@ export async function POST(request: NextRequest) {
 
     const image = formData.get('file');
     const exif = formData.get('exif');
+    const width = formData.get('width');
+    const height = formData.get('height');
     if (exif !== null) {
       formData.append('metadata', exif.toString());
       formData.delete('exif');
+    }
+    if (width !== null) {
+      formData.delete('width');
+    }
+    if (height !== null) {
+      formData.delete('height');
     }
     if (!image) {
       return NextResponse.json(
@@ -49,6 +57,8 @@ export async function POST(request: NextRequest) {
 
     const data: any = {
       cloudflareId: body.result.id,
+      width: parseInt(width?.toString() || '2048'),
+      height: parseInt(height?.toString() || '1365'),
     };
 
     if (exif !== null) {
@@ -62,6 +72,7 @@ export async function POST(request: NextRequest) {
         data.longitude = parsedExif.longitude;
       }
     }
+
     const newEntry = await prisma.photo.create({ data });
 
     const redirectUrl = request.nextUrl.clone();
