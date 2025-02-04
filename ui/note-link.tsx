@@ -1,10 +1,9 @@
-import React from 'react';
-import Image from 'next/image';
-import Balancer from 'react-wrap-balancer';
-import Heading from './heading';
-import Link from './link';
-import DateFormatter from './date';
-import { Blog } from 'contentlayer/generated';
+import React from "react";
+import Image from "next/image";
+import Heading from "./heading";
+import Link from "./link";
+import DateFormatter from "./date";
+import { Blog } from "contentlayer/generated";
 
 type Props = {
   data: Blog;
@@ -20,8 +19,8 @@ const NoteLinkItem = ({ data }: Props) => {
         classes="flex gap-8 justify-between"
       >
         <div>
-          <Heading level="h3" classes="underline">
-            <Balancer>{data.title}</Balancer>
+          <Heading level="h3" classes="underline text-balance">
+            {data.title}
           </Heading>
           <p className="mt-1 text-xl md:text-lg lg:text-xl text-gray-500">
             <DateFormatter dateString={data.date} />
