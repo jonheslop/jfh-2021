@@ -1,58 +1,57 @@
-import './globals.css';
-import { Analytics } from '@vercel/analytics/react';
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import Logo from '@/ui/logo';
-import Footer from '@/ui/footer';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import "./globals.css";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import Logo from "@/ui/logo";
+import Footer from "@/ui/footer";
+import { VercelAnalytics, VercelSpeedInsights } from "@/ui/analytics";
 
 const soehne = localFont({
   src: [
     {
-      path: './fonts/soehne-web-buch.woff2',
-      weight: '400',
-      style: 'normal',
+      path: "./fonts/soehne-web-buch.woff2",
+      weight: "400",
+      style: "normal",
     },
     {
-      path: './fonts/soehne-web-buch-kursiv.woff2',
-      weight: '400',
-      style: 'italic',
+      path: "./fonts/soehne-web-buch-kursiv.woff2",
+      weight: "400",
+      style: "italic",
     },
   ],
-  display: 'swap',
-  variable: '--font-soehne',
+  display: "swap",
+  variable: "--font-soehne",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jonheslop.com'),
+  metadataBase: new URL("https://jonheslop.com"),
   title: {
-    template: '%s | Jon Heslop',
-    default: 'Hello | Jon Heslop',
+    template: "%s | Jon Heslop",
+    default: "Hello | Jon Heslop",
   },
   alternates: {
     types: {
-      'application/rss+xml': 'https://jonheslop.com/feed.xml',
+      "application/rss+xml": "https://jonheslop.com/feed.xml",
     },
   },
-  description: 'Jon Heslop is a front end developer based in London.',
+  description: "Jon Heslop is a front end developer based in London.",
   viewport: {
-    width: 'device-width',
+    width: "device-width",
     initialScale: 1,
   },
   openGraph: {
-    title: 'Jon Heslop',
-    description: 'Jon Heslop is a front end developer based in London.',
-    url: 'http://jonheslop.com/',
-    siteName: 'jonheslop.com',
+    title: "Jon Heslop",
+    description: "Jon Heslop is a front end developer based in London.",
+    url: "http://jonheslop.com/",
+    siteName: "jonheslop.com",
     images: [
       {
-        url: 'http://jonheslop.com/jon-heslop.jpg',
+        url: "http://jonheslop.com/jon-heslop.jpg",
         width: 1280,
         height: 848,
       },
     ],
-    locale: 'en_GB',
-    type: 'website',
+    locale: "en_GB",
+    type: "website",
   },
 };
 
@@ -71,8 +70,8 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
-        <Analytics />
-        <SpeedInsights />
+        <VercelAnalytics />
+        <VercelSpeedInsights />
       </body>
     </html>
   );
