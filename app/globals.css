@@ -11,18 +11,24 @@
   }
 
   .post-content h1,
-  .post-content h2 {
+  .post-content h2,
+  .post-content h3 {
     @apply text-gray-500;
   }
 
   .post-content * + h1,
-  .post-content * + h2 {
+  .post-content * + h2,
+  .post-content * + h3 {
     @apply mt-16;
   }
 
   .post-content h1,
   .post-content h2 {
     @apply mb-4 text-xl md:text-lg lg:text-xl;
+  }
+
+  .post-content h3 {
+    @apply mb-4 text-sm uppercase tracking-wider;
   }
 
   .post-content p + p {
