@@ -30,11 +30,8 @@ const Footer = () => {
           About
         </Heading>
         <p className="text-xl max-w-3xl mb-4">
-          Jon Heslop is a front end developer based in&nbsp;
-          <abbr title="North East London, UK" className="cursor-help">
-            Walthamstow
-          </abbr>
-          . He lives with his wife{" "}
+          Jon Heslop is a front end developer based in <s>Walthamstow</s>{" "}
+          Cardigan, he lives with his wife{" "}
           <Link light href="https://www.instagram.com/becgoss/">
             Rebecca
           </Link>{" "}
