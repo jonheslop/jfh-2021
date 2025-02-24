@@ -35,10 +35,14 @@ const Footer = () => {
             Walthamstow
           </abbr>
           . He lives with his wife{" "}
-          <Link href="https://www.instagram.com/becgoss/">Rebecca</Link> and
-          their dog,{" "}
-          <Link href="https://www.instagram.com/maudethebord/">Maude</Link>. He
-          enjoys cycling, cooking and hanging out with friends.
+          <Link light href="https://www.instagram.com/becgoss/">
+            Rebecca
+          </Link>{" "}
+          and their dog,{" "}
+          <Link light href="https://www.instagram.com/maudethebord/">
+            Maude
+          </Link>
+          . He enjoys cycling, cooking and hanging out with friends.
         </p>
 
         <ul className="flex flex-wrap gap-4 mt-auto">
