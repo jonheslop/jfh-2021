@@ -24,7 +24,7 @@ export async function generateMetadata(
 
   const { title, date: publishedTime, description, image, slug } = post;
 
-  return {
+  const meta = {
     title,
     description,
     openGraph: {
@@ -40,6 +40,13 @@ export async function generateMetadata(
       description,
     },
   };
+
+  if (image !== undefined) {
+    // @ts-ignore
+    meta.openGraph.images = [{ url: image }];
+  }
+
+  return meta;
 }
 
 export default async function Blog({ params }: Props) {
