@@ -42,7 +42,7 @@ export async function generateMetadata(
   };
 
   if (image !== undefined) {
-    // @ts-ignore
+    // @ts-ignore - this works fine, think nextjs is out of date
     meta.openGraph.images = [{ url: image }];
   }
 
