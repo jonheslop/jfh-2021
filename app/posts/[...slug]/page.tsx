@@ -1,9 +1,9 @@
+import DateFormatter from "@/ui/date";
+import Heading from "@/ui/heading";
+import { Mdx } from "@/ui/mdx";
+import { allBlogs } from "contentlayer/generated";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { allBlogs } from "contentlayer/generated";
-import { Mdx } from "@/ui/mdx";
-import Heading from "@/ui/heading";
-import DateFormatter from "@/ui/date";
 
 type Props = {
   params: { id: string; slug: string[] };
@@ -65,11 +65,14 @@ export default async function Blog({ params }: Props) {
           __html: JSON.stringify(post.structuredData),
         }}
       ></script>
-      <header>
+      <header className="md:col-span-2">
         <Heading level="h1" classes="text-balance">
           {post.title}
         </Heading>
-        <p className="text-xl md:text-lg lg:text-xl text-gray-500 mt-16">
+        <p className="text-xl md:text-lg lg:text-xl text-gray-500 mt-4 text-pretty">
+          {post.description}
+        </p>
+        <p className="text-xl md:text-lg lg:text-xl text-gray-500 mt-14">
           <DateFormatter dateString={post.date} />
         </p>
       </header>
