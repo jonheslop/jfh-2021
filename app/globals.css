@@ -54,7 +54,7 @@
   }
 
   .post-content ul {
-    @apply my-8 list-inside list-disc md:list-outside;
+    @apply my-8 list-inside list-disc md:list-outside pl-2 md:pl-4 lg:pl-8;
   }
 
   .post-content li + li {
