@@ -15,6 +15,18 @@ type Props = {
   prevPhoto?: number;
 };
 
+const getAspect = (photo: StreamPhoto) => {
+  const ratio = photo.width / photo.height;
+  switch (true) {
+    case ratio < 1:
+      return 'portrait';
+    case ratio > 1:
+      return 'landscape';
+    case ratio === 1:
+      return 'square';
+  }
+};
+
 const StreamOverlay = ({ photo, nextPhoto, prevPhoto, ...props }: Props) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const router = useRouter();
