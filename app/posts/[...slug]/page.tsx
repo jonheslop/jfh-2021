@@ -76,7 +76,7 @@ export default async function Blog({ params }: Props) {
           <DateFormatter dateString={post.date} />
         </p>
       </header>
-      <div className="md:col-start-4 md:col-span-1 max-w-xl post-content">
+      <div className="md:col-start-4 md:col-span-1 max-w-xl post-content text-pretty">
         <Mdx code={post.body.code} />
       </div>
       {post.photos !== undefined && (
