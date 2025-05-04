@@ -16,7 +16,9 @@ id            Int      @id @default(autoincrement())
 createdAt     DateTime @default(now())
 cloudflareId  String
 caption       String?
-exif          String?
+exif          String? @db.VarChar(500)
 latitude      Int?
 longitude     Int?
+width         Int @default(2048)
+height        Int @default(1365)
 }
